@@ -1,0 +1,18 @@
+.site-logo{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+}
+
+.site-logo__title{
+    display: flex;
+    flex-direction: column;/*文字を縦に並べる*/
+}   
+
+.site-logo__subtitle{
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.25em;/*文字間隔を広げる*/
+    color: #999;
+}
