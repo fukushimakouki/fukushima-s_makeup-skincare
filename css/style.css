@@ -212,16 +212,29 @@ main {
     padding: 70px 44px;
 }
 
-.routine-skinCare {
+/* 共通の形 */
+.routine-skinCare,
+.routine-makeUp {
     display: flex;
     align-items: center;
     gap: 24px;
     padding: 16px;
-    background: #f5fbff;
-    border: 1px solid #dceaf3;
+    border: 1px solid;
     border-radius: 8px;
     text-decoration: none;
     color: #333;
+}
+
+/* スキンケアの色 */
+.routine-skinCare {
+    background: #f5fbff;
+    border-color: #dceaf3;
+}
+
+/* メイクの色 */
+.routine-makeUp {
+    background: #fff8f0;
+    border-color: #eadccc;
 }
 
 .skinCare_img {
