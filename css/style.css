@@ -50,7 +50,7 @@ body {
 .site-logo__subtitle{
     font-family: Arial, sans-serif;
     font-size: 12px;
-    letter-spacing: 0.25em;/*文字間隔を広げる*/
+    letter-spacing: 0.16em;/*文字間隔を広げる*/
     color: #999;
 }
 
@@ -69,16 +69,18 @@ header{
     gap: 24px;/*リンク同士の間隔*/
 }
 
-.header-nav a{
-    text-decoration: none;/*リンクの下線を消す*/
+.header-nav a {
+    text-decoration: none;
     font-size: 14px;
-    color:#333;
+    font-weight: 400;
+    color: #686c70;
 }
 
-.header-nav a.is-active{
-    color:#d9789b;
-    font-weight: bold;/*太字*/
-    border-bottom: 2px solid #d9789b;/*下線をつける*/
+.header-nav a.is-active {
+    color: #d9789b;
+    font-weight: 400;
+    border-bottom: 2px solid #d9789b;
+    padding-bottom: 10px;
 }
 
 header,
@@ -98,7 +100,6 @@ main{
     display: flex;
     align-items: center;
     gap: 48px;
-    max-width: 2398px;
     margin: 0 auto;/*全体を左右中央へ*/
     padding: 60px 32px;
 }
