@@ -311,10 +311,10 @@ main {
 }
 
 .routine-card-text p {
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.9;
-    color: #7b747a;
-    margin: 0 0 20px;
+    color: #7c858b;
+    margin: 0;
 }
 
 /* 01/SKINCARE・02/MAKEUP */
