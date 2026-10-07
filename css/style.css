@@ -35,10 +35,12 @@ body {
     text-decoration: none;
 }
 
-.site-text{
+.site-text {
     display: flex;
     flex-direction: column;/*文字を縦に並べる*/
-}   
+    gap: 1px;
+    line-height: 1.24;
+}
 
 .site-logo__title{
     font-family: Georgia,serif;
@@ -61,26 +63,42 @@ header{
     max-width: 2398px;
     margin: 0 auto;
     padding: 16px 32px;
+    height: 80px;
+    padding: 0 44px;
 }
 
-.header-nav{
+.header-nav {
     display: flex;
     align-items: center;
-    gap: 24px;/*リンク同士の間隔*/
+    gap: 35px;
 }
 
 .header-nav a {
-    text-decoration: none;
+    font-family: "Yu Gothic", Meiryo, sans-serif;
     font-size: 14px;
+    line-height: 1.8;
+    letter-spacing: 0.02em;
     font-weight: 400;
+    text-decoration: none;
     color: #686c70;
+    padding: 10px 0;
+    border-bottom: 2px solid transparent;/*各リンクに透明な線を追加して高さを合わせる*/
+    position: relative;
+    border-bottom: none;
+} 
+
+.header-nav a.is-active {/* 今いるページだけ、線をピンクにする */
+    color: #d9789b;
 }
 
-.header-nav a.is-active {
-    color: #d9789b;
-    font-weight: 400;
-    border-bottom: 2px solid #d9789b;
-    padding-bottom: 10px;
+.header-nav a.is-active::after {/*HTMLにタグを追加せず装飾を作る仕組み。左右を18%ずつ空けるので、リンク幅の64%の短い下線になる*/
+    content: "";
+    position: absolute;
+    bottom: 1px;
+    left: 18%;
+    right: 18%;
+    height: 1px;
+    background: #d9789b;
 }
 
 header,
@@ -92,8 +110,12 @@ header,
 メイン
 ===============================================================*/
 
-main{
-    background-color: #fff2f7;
+main {
+    background: radial-gradient(
+        ellipse at 5% 0%,
+        #fff3f6,
+        transparent 48%
+    ), #fff;
 }
 
 .intro{
