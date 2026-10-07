@@ -205,3 +205,33 @@ main {
 /*================================================================
 ルーティン
 ===============================================================*/
+
+.routine {
+    max-width: 1298px;
+    margin: 0 auto;
+    padding: 70px 44px;
+}
+
+.routine-skinCare {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 16px;
+    background: #f5fbff;
+    border: 1px solid #dceaf3;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #333;
+}
+
+.skinCare_img {
+    display: block;
+    width: 45%;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.routine-card-text {
+    flex: 1;
+}
