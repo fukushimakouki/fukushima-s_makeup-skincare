@@ -1,3 +1,12 @@
+* {
+    box-sizing: border-box; /* 幅にpaddingと枠線を含める */
+}
+
+body {
+    margin: 0; /* ブラウザ標準の外側の余白を消す */
+}
+
+
 /*======================================================================
 色指定
 ========================================================================*/
@@ -49,6 +58,8 @@ header{
     display: flex;
     justify-content: space-between;/*ロゴとナビを左右に分ける*/
     align-items: center;
+    max-width: 2398px;
+    margin: 0 auto;
     padding: 16px 32px;
 }
 
@@ -70,6 +81,11 @@ header{
     border-bottom: 2px solid #d9789b;/*下線をつける*/
 }
 
+header,
+.intro {
+    max-width: 1298px;
+    margin: 0 auto;
+}
 /*================================================================
 メイン
 ===============================================================*/
@@ -82,7 +98,7 @@ main{
     display: flex;
     align-items: center;
     gap: 48px;
-    max-width: 1100px;
+    max-width: 2398px;
     margin: 0 auto;/*全体を左右中央へ*/
     padding: 60px 32px;
 }
@@ -91,13 +107,20 @@ main{
     flex: 1;/*文章の箱に、写真と間隔を除いた残りの幅を使わせる*/
 }
 
-.intro-title{
-    font-size: 48px;
-    line-height: 1.5;
-    margin: 24px;
+.intro-title {
+    font-family: "游明朝", "Yu Mincho", serif;
+    font-weight: 500;
+    font-size: 56px;
+    line-height: 1.63;
+    letter-spacing: 0.065em;
+    color: #333;
+    margin: 0 0 24px;
 }
 
-.sakuramiku{
-    width: 40%;
-    height: auto;
+.sakuramiku {
+    width: 49%;
+    height: 550px;
+    object-fit: cover; /* 比率を保ちながら枠いっぱいに切り抜く */
+    object-position: center;
+    border-radius: 220px 220px 8px 8px;
 }
