@@ -237,7 +237,7 @@ main {
     border-color: #eadccc;
 }
 
-.skinCare_img {
+.skinCare_img ,.makeUp_img {
     display: block;
     width: 45%;
     height: 320px;
@@ -247,4 +247,14 @@ main {
 
 .routine-card-text {
     flex: 1;
+}
+
+.routine-cards {/* 2つのカードを横に並べる */
+    display: flex;
+    gap: 24px;
+}
+
+.routine-cards > a {/* 2つのカードに同じ割合で幅を分けて、必要なら小さく縮められるようにする */
+    flex: 1;
+    min-width: 0;
 }
