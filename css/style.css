@@ -206,6 +206,24 @@ main {
 ルーティン
 ===============================================================*/
 
+.routine-label {
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    color: #a29a9e;
+    margin: 0 0 16px;
+}
+
+.routine-title {
+    font-family: "游明朝", "Yu Mincho", serif;
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 1.6;
+    letter-spacing: 0.05em;
+    color: #333;
+    margin: 0 0 32px;
+}
+
 .routine {
     max-width: 1298px;
     margin: 0 auto;
@@ -257,4 +275,35 @@ main {
 .routine-cards > a {/* 2つのカードに同じ割合で幅を分けて、必要なら小さく縮められるようにする */
     flex: 1;
     min-width: 0;
+}
+
+.routine-card-text{
+    font-family: "Yu Gothic", Meiryo, sans-serif;
+}
+
+.routine-card-text p {
+    font-size: 14px;
+    line-height: 1.9;
+    color: #7b747a;
+    margin: 0 0 20px;
+}
+
+/* 01/SKINCARE・02/MAKEUP */
+.routine-card-text p:first-child {/*:first-child親の最初の子要素であること*/
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    margin-bottom: 14px;
+}
+
+.routine-card-text h3 {
+    font-family: "游明朝", "Yu Mincho", serif;
+    font-size: 23px;
+    font-weight: 500;
+    line-height: 1.6;
+    margin: 0 0 16px;
+}
+
+.routine-card-text span {
+    font-size: 13px;
+    color: #555;
 }
