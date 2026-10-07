@@ -197,3 +197,7 @@ main {
     pointer-events: none;
     z-index: 0;
 }
+
+.intro-area {
+    border-bottom: 1px solid #f0dce3;
+}
