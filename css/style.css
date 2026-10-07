@@ -1,18 +1,48 @@
+.site-icon{
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;/*横幅が足りなくても、この要素を縮めない*/
+}
+
 .site-logo{
     display: flex;
-    align-items: center;
+    align-items: center;/*上下の中央をそろえる*/
     gap: 12px;
     text-decoration: none;
 }
 
-.site-logo__title{
+.site-text{
     display: flex;
     flex-direction: column;/*文字を縦に並べる*/
 }   
+
+.site-logo__title{
+    font-family: Georgia,serif;
+    font-size: 28px;
+    color: #333;
+}
 
 .site-logo__subtitle{
     font-family: Arial, sans-serif;
     font-size: 12px;
     letter-spacing: 0.25em;/*文字間隔を広げる*/
     color: #999;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;/*ロゴとナビを左右に分ける*/
+    align-items: center;
+    padding: 16px 32px;
+}
+
+.header-nav{
+    display: flex;
+    align-items: center;
+    gap: 24px;/*リンク同士の間隔*/
+}
+
+.header-nav a{
+    text-decoration: none;/*リンクの下線を消す*/
+    color:#333;
 }
