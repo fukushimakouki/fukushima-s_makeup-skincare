@@ -303,7 +303,18 @@ main {
     margin: 0 0 16px;
 }
 
+/* 共通の文字サイズと太さ */
 .routine-card-text span {
-    font-size: 13px;
-    color: #555;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+/* スキンケア：青 */
+.routine-skinCare .routine-card-text span {
+    color: #518ab1;
+}
+
+/* メイク：茶色 */
+.routine-makeUp .routine-card-text span {
+    color: #ac795f;
 }
