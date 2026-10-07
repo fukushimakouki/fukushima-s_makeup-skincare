@@ -63,6 +63,11 @@ header{
     margin: 0 auto;
     height: 80px;
     padding: 0 44px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: #fff;
+        
 }
 
 .header-nav {
@@ -207,11 +212,23 @@ main {
 ===============================================================*/
 
 .routine-label {
+    display: flex;
+    align-items: center;
+    gap: 11px;
     font-family: Arial, sans-serif;
     font-size: 11px;
-    letter-spacing: 0.16em;
-    color: #a29a9e;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    color: #b95376;
     margin: 0 0 16px;
+}
+
+.routine-label::before {
+    content: "";
+    width: 25px;
+    height: 1px;
+    background: currentColor;
+    flex-shrink: 0;
 }
 
 .routine-title {
@@ -233,10 +250,13 @@ main {
 /* 共通の形 */
 .routine-skinCare,
 .routine-makeUp {
+    position: relative;
     display: flex;
-    align-items: center;
-    gap: 24px;
-    padding: 16px;
+    align-items: stretch;
+    gap: 0;
+    height: auto;
+    min-height: 405px;
+    padding: 12px;
     border: 1px solid;
     border-radius: 8px;
     text-decoration: none;
@@ -255,16 +275,25 @@ main {
     border-color: #eadccc;
 }
 
-.skinCare_img ,.makeUp_img {
-    display: block;
-    width: 45%;
-    height: 320px;
+.skinCare_img,
+.makeUp_img {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    width: calc(58% - 12px);
+    height: calc(100% - 24px);
     object-fit: cover;
     border-radius: 4px;
 }
-
 .routine-card-text {
     flex: 1;
+    min-width: 0;
+    margin-left: 57%;
+    padding: 61px 8px 27px 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-family: "Yu Gothic", Meiryo, sans-serif;
 }
 
 .routine-cards {/* 2つのカードを横に並べる */
@@ -290,23 +319,27 @@ main {
 
 /* 01/SKINCARE・02/MAKEUP */
 .routine-card-text p:first-child {/*:first-child親の最初の子要素であること*/
-    font-size: 11px;
-    letter-spacing: 0.12em;
+    font-family: Georgia, serif;
+    font-size: 13px;
+    letter-spacing: 0.16em;
     margin-bottom: 14px;
 }
 
 .routine-card-text h3 {
     font-family: "游明朝", "Yu Mincho", serif;
-    font-size: 23px;
+    font-size: clamp(24px, 2.3vw, 32px);
     font-weight: 500;
     line-height: 1.6;
-    margin: 0 0 16px;
+    letter-spacing: 0.03em;
+    margin: 18px 0 14px;
 }
 
 /* 共通の文字サイズと太さ */
 .routine-card-text span {
     font-size: 14px;
     font-weight: 700;
+    margin-top: auto;
+    padding-top: 25px;
 }
 
 /* スキンケア：青 */
@@ -317,4 +350,14 @@ main {
 /* メイク：茶色 */
 .routine-makeUp .routine-card-text span {
     color: #ac795f;
+}
+
+/* 01 / SKINCARE：青 */
+.routine-skinCare .routine-card-text p:first-child {
+    color: #6498b9;
+}
+
+/* 02 / MAKEUP：茶色 */
+.routine-makeUp .routine-card-text p:first-child {
+    color: #b68a74;
 }
