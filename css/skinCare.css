@@ -1,0 +1,32 @@
+main {
+    background: #f4fafc;
+}
+
+.skinCare-intro {
+    max-width: 1298px;
+    margin: 0 auto;
+    padding: 34px 44px 30px;
+    display: flex;
+    align-items: center;
+    gap: 38px;
+}
+
+.skinCare-intro-text {
+    flex: 1;
+    min-width: 0;/*横幅が足りなくても縮めない*/
+}
+
+.skinCare-intro-photo {
+    width: 250px;
+    height: 174px;
+    flex-shrink: 0;
+    border-radius: 90px 90px 6px 6px;/*四隅を丸くする*/
+    overflow: hidden;
+}
+
+.skinCare-intro-photo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;/*写真の比率を保ちながら枠いっぱいに埋める*/
+}
