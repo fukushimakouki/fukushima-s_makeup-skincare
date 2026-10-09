@@ -97,7 +97,8 @@ main {
     margin-bottom: 28px; /* タブの箱の外側・下に28pxの余白を作る */
 }
 
-.skinCare-tabs button { /* ボタンの標準の見た目を消して、余白や下線を設定している */
+.skinCare-tabs button {
+    /* ボタンの標準の見た目を消して、余白や下線を設定している */
     background: none; /* ボタンの背景をなくす */
     border: none; /* ブラウザが標準で付けるボタンの枠線を消す */
     border-bottom: 3px solid transparent; /* 下側だけ、太さ3pxの透明な実線 */

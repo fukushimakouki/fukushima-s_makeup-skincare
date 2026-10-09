@@ -75,7 +75,8 @@ main {
     gap: 14px;
 }
 
-.intro-caption::before { /* 線と文字をFlexで横に並べて、中央をそろえる */
+.intro-caption::before {
+    /* 線と文字をFlexで横に並べて、中央をそろえる */
     content: "";
     width: 44px;
     height: 1px;
@@ -213,12 +214,14 @@ main {
     font-family: "Yu Gothic", Meiryo, sans-serif;
 }
 
-.routine-cards { /* 2つのカードを横に並べる */
+.routine-cards {
+    /* 2つのカードを横に並べる */
     display: flex;
     gap: 24px;
 }
 
-.routine-cards > a { /* 2つのカードに同じ割合で幅を分けて、必要なら小さく縮められるようにする */
+.routine-cards > a {
+    /* 2つのカードに同じ割合で幅を分けて、必要なら小さく縮められるようにする */
     flex: 1;
     min-width: 0;
 }
@@ -235,7 +238,8 @@ main {
 }
 
 /* 01/SKINCARE・02/MAKEUP */
-.routine-card-text p:first-child { /* :first-child親の最初の子要素であること */
+.routine-card-text p:first-child {
+    /* :first-child親の最初の子要素であること */
     font-family: Georgia, serif;
     font-size: 13px;
     letter-spacing: 0.16em;

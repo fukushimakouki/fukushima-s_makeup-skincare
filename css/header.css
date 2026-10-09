@@ -68,11 +68,13 @@ header {
     border-bottom: none;
 }
 
-.header-nav a.is-active { /* 今いるページだけ、線をピンクにする */
+.header-nav a.is-active {
+    /* 今いるページだけ、線をピンクにする */
     color: #d9789b;
 }
 
-.header-nav a.is-active::after { /* HTMLにタグを追加せず装飾を作る仕組み。左右を18%ずつ空けるので、リンク幅の64%の短い下線になる */
+.header-nav a.is-active::after {
+    /* HTMLにタグを追加せず装飾を作る仕組み。左右を18%ずつ空けるので、リンク幅の64%の短い下線になる */
     content: "";
     position: absolute;
     bottom: 1px;
