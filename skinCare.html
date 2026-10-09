@@ -5,255 +5,160 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="css/skinCare.css">
         <link rel="stylesheet" href="css/header.css">
-        <title>
-            ふっくーのスキンケア
-        </title>
+        <title>ふっくーのスキンケア</title>
     </head>
 
     <body>
+        <!-- ヘッダー -->
         <header>
             <a href="index.html" class="site-logo">
-                <img src="images/icon/sakura-mark.svg"
-                    alt="ふっくーのメイク・スキンケア"
-                    class="site-icon">
+                <img src="images/icon/sakura-mark.svg" alt="ふっくーのメイク・スキンケア" class="site-icon">
 
                 <span class="site-text">
-                    <span class="site-logo__title">
-                        Fukku Beauty.
-                    </span>
-                    <span class="site-logo__subtitle">
-                        MY SKINCARE &amp; MAKEUP
-                    </span>
+                    <span class="site-logo__title">Fukku Beauty.</span>
+                    <span class="site-logo__subtitle">MY SKINCARE &amp; MAKEUP</span>
                 </span>
             </a>
 
             <nav class="header-nav">
-                <a href="index.html" class="Top">
-                    トップ
-                </a>
-                <a href="skinCare.html"
-                        class="skinCare is-active"
-                        aria-current="page">スキンケア</a>
-                    <a href="makeUp.html" class="makeUp">
-                        メイク
-                    </a>
-                </nav>
-            </header>
+                <a href="index.html" class="Top">トップ</a>
+                <a href="skinCare.html" class="skinCare is-active" aria-current="page">スキンケア</a>
+                <a href="makeUp.html" class="makeUp">メイク</a>
+            </nav>
+        </header>
 
-            <main>
-                <section class="skinCare-intro">
-                    <div class="skinCare-intro-text">
-                        <nav class="breadcrumb" aria-label="パンくずリスト">
-                            <a href="index.html">
-                                トップ
-                            </a>
-                            <span>
-                                / スキンケア
-                            </span>
-                        </nav>
+        <main>
+            <!-- ページの導入 -->
+            <section class="skinCare-intro">
+                <div class="skinCare-intro-text">
+                    <nav class="breadcrumb" aria-label="パンくずリスト">
+                        <a href="index.html">トップ</a>
+                        <span>/ スキンケア</span>
+                    </nav>
 
-                        <p class="skinCare-label">
-                            MY SKINCARE
-                        </p>
-                        <h1>
-                            毎日のケアで、肌を整える。
-                        </h1>
-                        <p>
-                            洗顔から保湿まで。いつもの手順とアイテム。
-                        </p>
+                    <p class="skinCare-label">MY SKINCARE</p>
+                    <h1>毎日のケアで、肌を整える。</h1>
+                    <p>洗顔から保湿まで。いつもの手順とアイテム。</p>
+                </div>
+
+                <div class="skinCare-intro-photo">
+                    <img src="images/アヌアのミストと美容液.png" alt="アヌアのミストと美容液">
+                </div>
+            </section>
+
+            <
+                <section class="skinCare-content">
+                    <!-- 表示切り替え -->
+                    <div class="skinCare-tabs">
+                        <button type="button" class="is-active">ルーティン</button>
+                        <button type="button">使用アイテム</button>
                     </div>
 
-                    <div class="skinCare-intro-photo">
-                        <img src="images/アヌアのミストと美容液.png"
-                            alt="アヌアのミストと美容液">
-                    </div>
-                </section>
-
-                <div id="routine-panel">
-                    <section class="skinCare-content">
-                        <div class="skinCare-tabs">
-                            <button type="button" class="is-active">
-                                ルーティン
-                            </button>
-                            <button type="button">
-                                使用アイテム
-                            </button>
-                        </div>
-
-                        <section class="skinCare-morning">
-                            <div class="routine-heading">
-                                <div>
-                                    <p class="routine-heading-label">
-                                        MORNING ROUTINE
-                                    </p>
-                                    <h2>
-                                        朝のスキンケア
-                                    </h2>
-                                </div>
-                            </div>
-
-                            <div class="routine-steps">
-
-                                <article class="routine-step">
-                                    <p class="routine-step-number">
-                                        01
-                                    </p>
-                                    <h3>
-                                        洗顔
-                                    </h3>
-                                    <p>
-                                        洗顔で、朝の肌を整える。
-                                    </p>
-                                </article>
-
-                                <article class="routine-step">
-                                    <p class="routine-step-number">
-                                        02
-                                    </p>
-                                    <h3>
-                                        髭剃り
-                                    </h3>
-                                    <p>
-                                        洗顔後に、髭を剃る
-                                    </p>
-                                </article>
-
-                                <article class="routine-step">
-                                    <p class="routine-step-number">
-                                        03
-                                    </p>
-                                    <h3>
-                                        化粧水
-                                    </h3>
-                                    <p>
-                                        髭剃りの後に、アヌアの化粧水をなじませる。
-                                    </p>
-                                </article>
-                            </div>
-                        </section>
-
-                        <section class="skinCare-night">
-                            <div class="routine-heading">
-                                <div>
-                                    <p class="routine-heading-label">
-                                        NIGHT ROUTINE
-                                    </p>
-                                    <h2>
-                                        夜のスキンケア
-                                    </h2>
-                                </div>
-                            </div>
-
-                            <div class="routine-steps">
-                                <article class="routine-step">
-                                    <p class="routine-step-number">
-                                        01
-                                    </p>
-                                    <h3>
-                                        クレンジング
-                                    </h3>
-                                    <p>
-                                        オイルクレンジングで、メイクをしっかり落とす
-                                    </p>
-                                </article>
-
-                                <article class="routine-step">
-                                    <p class="routine-step-number">
-                                        02
-                                    </p>
-                                    <h3>
-                                        お風呂
-                                    </h3>
-                                    <p>
-                                        クレンジングで落とし切れていない汚れや油分をしっかり落とす
-                                    </p>
-                                </article>
-
-                                <article class="routine-step">
-                                    <p class="routine-step-number">
-                                        03
-                                    </p>
-                                    <h3>
-                                        洗顔
-                                    </h3>
-                                    <p>
-                                        最後まで落とし切れていない汚れを落とす
-                                    </p>
-                                </article>
-
-                                <article class="routine-step">
-                                    <p class="routine-step-number">
-                                        04
-                                    </p>
-                                    <h3>
-                                        化粧水
-                                    </h3>
-                                    <p>
-                                        乾燥する前に、化粧水をなじませる
-                                    </p>
-                                </article>
-
-                                <article class="routine-step">
-                                    <p class="routine-step-number">
-                                        05
-                                    </p>
-                                    <h3>
-                                        美容液
-                                    </h3>
-                                    <p>
-                                        化粧水の後に美容液をなじませる
-                                    </p>
-                                </article>
-
-                                <article class="routine-step">
-                                    <p class="routine-step-number">
-                                        06
-                                    </p>
-                                    <h3>
-                                        乳液
-                                    </h3>
-                                    <p>
-                                        化粧水、美容液は乾きやすいので、乳液で蓋をしましょう
-                                    </p>
-                                </article>
-                            </div>
-                        </section>
-                    </div>
-
-                    <section class="skinCare-items">
+                    <!-- 朝のスキンケア -->
+                    <div id="routine-panel">
+                    <section class="skinCare-morning">
                         <div class="routine-heading">
                             <div>
-                                <p class="routine-heading-label">
-                                    MY ITEMS
-                                </p>
-                                <h2>
-                                    スキンケアに使うもの
-                                </h2>
+                                <p class="routine-heading-label">MORNING ROUTINE</p>
+                                <h2>朝のスキンケア</h2>
                             </div>
                         </div>
 
-                        <section class="skinCare-items" id="items-panel" hidden>
-                            <div class="item-cards">
-                                <article class="item-card">
-                                    <img src="images/浅い水面に横たわるビオレ洗顔ボトル.png"
-                                        alt="洗顔の写真">
+                        <div class="routine-steps">
+                            <article class="routine-step">
+                                <p class="routine-step-number">01</p>
+                                <h3>洗顔</h3>
+                                <p>洗顔で、朝の肌を整える。</p>
+                            </article>
 
-                                    <div class="item-card-text">
-                                        <p class="item-kind">
-                                            洗顔料
-                                        </p>
-                                        <h3>
-                                            ビオレ ザフェイス
-                                        </h3>
-                                        <p>
-                                            朝と夜の洗顔に使っています。
-                                        </p>
-                                    </div>
-                                </article>
+                            <article class="routine-step">
+                                <p class="routine-step-number">02</p>
+                                <h3>髭剃り</h3>
+                                <p>洗顔後に、髭を剃る</p>
+                            </article>
+
+                            <article class="routine-step">
+                                <p class="routine-step-number">03</p>
+                                <h3>化粧水</h3>
+                                <p>髭剃りの後に、アヌアの化粧水をなじませる。</p>
+                            </article>
+                        </div>
+                    </section>
+
+                    <!-- 夜のスキンケア -->
+                    <section class="skinCare-night">
+                        <div class="routine-heading">
+                            <div>
+                                <p class="routine-heading-label">NIGHT ROUTINE</p>
+                                <h2>夜のスキンケア</h2>
                             </div>
-                        </section>
+                        </div>
+
+                        <div class="routine-steps">
+                            <article class="routine-step">
+                                <p class="routine-step-number">01</p>
+                                <h3>クレンジング</h3>
+                                <p>オイルクレンジングで、メイクをしっかり落とす</p>
+                            </article>
+
+                            <article class="routine-step">
+                                <p class="routine-step-number">02</p>
+                                <h3>お風呂</h3>
+                                <p>クレンジングで落とし切れていない汚れや油分をしっかり落とす</p>
+                            </article>
+
+                            <article class="routine-step">
+                                <p class="routine-step-number">03</p>
+                                <h3>洗顔</h3>
+                                <p>最後まで落とし切れていない汚れを落とす</p>
+                            </article>
+
+                            <article class="routine-step">
+                                <p class="routine-step-number">04</p>
+                                <h3>化粧水</h3>
+                                <p>乾燥する前に、化粧水をなじませる</p>
+                            </article>
+
+                            <article class="routine-step">
+                                <p class="routine-step-number">05</p>
+                                <h3>美容液</h3>
+                                <p>化粧水の後に美容液をなじませる</p>
+                            </article>
+
+                            <article class="routine-step">
+                                <p class="routine-step-number">06</p>
+                                <h3>乳液</h3>
+                                <p>化粧水、美容液は乾きやすいので、乳液で蓋をしましょう</p>
+                            </article>
+                        </div>
                     </section>
                 </section>
-            </main>
-        </body>
-    </html>
+            </div>
+
+            <!-- 使用アイテム -->
+            <section class="skinCare-items">
+                <div class="routine-heading">
+                    <div>
+                        <p class="routine-heading-label">MY ITEMS</p>
+                        <h2>スキンケアに使うもの</h2>
+                    </div>
+                </div>
+
+                <section class="skinCare-items" id="items-panel" hidden>
+                    <div class="item-cards">
+                        <article class="item-card">
+                            <img src="images/浅い水面に横たわるビオレ洗顔ボトル.png" alt="洗顔の写真">
+
+                            <div class="item-card-text">
+                                <p class="item-kind">洗顔料</p>
+                                <h3>ビオレ ザフェイス</h3>
+                                <p>朝と夜の洗顔に使っています。</p>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+            </section>
+
+        </main>
+    </body>
+</html>
