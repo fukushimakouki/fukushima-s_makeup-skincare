@@ -114,3 +114,58 @@ main {
     color: #276888;
     font-weight: 700;
 }
+
+.routine-steps {
+    display: flex;
+    gap: 16px;
+}
+
+.routine-step {
+    flex: 1;/*横並びの中で空いている幅を分け合う*/
+    min-width: 0;
+    min-height: 230px;
+    padding: 24px;
+    background: #fff;
+    border: 1px solid #c7dfe9;/*四辺に枠線を付ける*/
+    border-radius: 8px;/*カードの四隅を丸める*/
+}
+
+.routine-heading {
+    margin-bottom: 20px;
+}
+
+.routine-heading-label {
+    margin: 0;
+    font-family: "Yu Gothic", Meiryo, sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    color: #276888;
+}
+
+.routine-heading h2 {
+    margin: 3px 0 0;
+    font-family: "游明朝", "Yu Mincho", serif;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.routine-step p {
+    margin: 0;
+    font-family: "Yu Gothic", Meiryo, sans-serif;
+    font-size: 16px;
+    line-height: 1.8;
+    color: #63717b;
+}
+
+.routine-step .routine-step-number {
+    font-size: 32px;
+    color: #276888;
+    opacity: 0.55;/*不透明度を55％*/
+}
+
+.routine-step h3 {
+    margin: 18px 0 10px;
+    font-family: "游明朝", "Yu Mincho", serif;
+    font-size: 20px;
+    font-weight: 500;
+}
