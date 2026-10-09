@@ -1,3 +1,15 @@
+* {
+    box-sizing: border-box; /* 幅にpaddingと枠線を含める */
+}
+
+body {
+    margin: 0; /* ブラウザ標準の外側の余白を消す */
+}
+
+/*================================================================================
+メイン
+=================================================================================*/
+
 main {
     background: #f4fafc;
 }
@@ -30,3 +42,44 @@ main {
     height: 100%;
     object-fit: cover;/*写真の比率を保ちながら枠いっぱいに埋める*/
 }
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin-bottom: 16px;
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    color: #276888;
+}
+
+.breadcrumb a {
+    color: inherit;
+    text-decoration: underline;
+}
+
+.skinCare-intro-text {
+    font-family: "Yu Gothic", Meiryo, sans-serif;
+}
+
+.skinCare-intro-text p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.8;
+    color: #626c74;
+}
+
+.skinCare-intro-text .skinCare-label {
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    color: #276888;
+}
+
+.skinCare-intro-text h1 {
+    font-family: "游明朝", "Yu Mincho", serif;
+    font-size: clamp(27px, 3vw, 40px);/*27px最小の文字サイズ,3vw基本のサイズ。画面幅の3％,40px最大の文字サイズ*/
+    font-weight: 500;
+    line-height: 1.5;
+    margin: 10px 0;
+    color: #303842;
+}   
