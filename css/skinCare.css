@@ -175,3 +175,26 @@ main {
 .skinCare-night {
     margin-top: 40px;
 }
+
+.skinCare-items {
+    margin-top: 40px;
+}
+
+.item-card {
+    width: 300px;
+    background: #fff;
+    border: 1px solid #c7dfe9;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.item-card img {
+    display: block;
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.item-card-text {
+    padding: 20px;
+}
