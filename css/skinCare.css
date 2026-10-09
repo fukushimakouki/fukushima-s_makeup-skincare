@@ -181,20 +181,47 @@ main {
 }
 
 .item-card {
-    width: 300px;
+    width: 100%;
     background: #fff;
     border: 1px solid #c7dfe9;
     border-radius: 8px;
-    overflow: hidden;
+    overflow: hidden;/*はみ出した部分を隠す*/
 }
 
 .item-card img {
     display: block;
     width: 100%;
-    height: 300px;
+    height: 190px;
     object-fit: cover;
 }
 
 .item-card-text {
     padding: 20px;
+}
+
+.item-card-text p {
+    margin: 0;
+    font-family: "Yu Gothic", Meiryo, sans-serif;
+    font-size: 16px;
+    line-height: 1.8;
+    color: #68727b;
+}
+
+.item-card-text .item-kind {
+    font-size: 12px;
+    color: #276888;
+}
+
+.item-card-text h3 {
+    margin: 8px 0 12px;
+    font-family: "游明朝", "Yu Mincho", serif;
+    font-size: 21px;
+    font-weight: 500;
+    color: #303842;
+}
+
+.item-cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr)));
+    gap: 20px;
 }
