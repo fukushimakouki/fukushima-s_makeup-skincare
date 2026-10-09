@@ -6,108 +6,13 @@ body {
     margin: 0; /* ブラウザ標準の外側の余白を消す */
 }
 
-
 /*======================================================================
 色指定
 ========================================================================*/
-.pink{
+.pink {
     color: #d9789b;
 }
 
-
-
-
-
-/*======================================================================
-ヘッダー
-=====================================================================*/
-
-.site-icon{
-    width: 40px;
-    height: 40px;
-    flex-shrink: 0;/*横幅が足りなくても、この要素を縮めない*/
-}
-
-.site-logo{
-    display: flex;
-    align-items: center;/*上下の中央をそろえる*/
-    gap: 12px;
-    text-decoration: none;
-}
-
-.site-text {
-    display: flex;
-    flex-direction: column;/*文字を縦に並べる*/
-    gap: 1px;
-    line-height: 1.24;
-}
-
-.site-logo__title{
-    font-family: Georgia,serif;
-    font-size: 19px;
-    font-weight: 500;
-    color: #333;
-}
-
-.site-logo__subtitle{
-    font-family: Arial, sans-serif;
-    font-size: 12px;
-    letter-spacing: 0.16em;/*文字間隔を広げる*/
-    color: #999;
-}
-
-header{
-    display: flex;
-    justify-content: space-between;/*ロゴとナビを左右に分ける*/
-    align-items: center;
-    margin: 0 auto;
-    height: 80px;
-    padding: 0 44px;
-    position: sticky;
-    top: 0;
-    z-index: 10;
-    background: #fff;
-        
-}
-
-.header-nav {
-    display: flex;
-    align-items: center;
-    gap: 35px;
-}
-
-.header-nav a {
-    font-family: "Yu Gothic", Meiryo, sans-serif;
-    font-size: 14px;
-    line-height: 1.8;
-    letter-spacing: 0.02em;
-    font-weight: 400;
-    text-decoration: none;
-    color: #686c70;
-    padding: 10px 0;
-    position: relative;
-    border-bottom: none;
-} 
-
-.header-nav a.is-active {/* 今いるページだけ、線をピンクにする */
-    color: #d9789b;
-}
-
-.header-nav a.is-active::after {/*HTMLにタグを追加せず装飾を作る仕組み。左右を18%ずつ空けるので、リンク幅の64%の短い下線になる*/
-    content: "";
-    position: absolute;
-    bottom: 1px;
-    left: 18%;
-    right: 18%;
-    height: 1px;
-    background: #d9789b;
-}
-
-header,
-.intro {
-    max-width: 1298px;
-    margin: 0 auto;
-}
 /*================================================================
 メイン
 ===============================================================*/
@@ -120,37 +25,37 @@ main {
     ), #fff;
 }
 
-.intro{
+.intro {
     display: flex;
     align-items: center;
     gap: 48px;
-    margin: 0 auto;/*全体を左右中央へ*/
+    margin: 0 auto; /*全体を左右中央へ*/
     padding: 60px 44px;
 }
 
-.intro-text{
-    flex: 1;/*文章の箱に、写真と間隔を除いた残りの幅を使わせる*/
+.intro-text {
+    flex: 1; /*文章の箱に、写真と間隔を除いた残りの幅を使わせる*/
 }
 
 .intro-title {
     font-family: "游明朝", "Yu Mincho", serif;
-    font-weight: 500;
+    font-weight: 500;/*文字の太さ*/
     font-size: 56px;
-    line-height: 1.63;
+    line-height: 1.63;/*一行の高さ*/
     letter-spacing: 0.065em;
     color: #333;
     margin: 0 0 24px;
 }
 
-.intro-subtitle{
-    font-family:Georgia,serif;
+.intro-subtitle {
+    font-family: Georgia, serif;
     font-style: italic;
     font-size: 31px;
     color: #da9bb0;
     margin: 0 0 20px;
 }
 
-.intro-description{
+.intro-description {
     font-family: "游ゴシック", "Meiryo", sans-serif;
     font-size: 16px;
     line-height: 1.9;
@@ -158,7 +63,7 @@ main {
     margin: 26px 0 0;
 }
 
-.intro-caption{
+.intro-caption {
     display: flex;
     font-family: "游ゴシック", "Meiryo", sans-serif;
     font-size: 12px;
@@ -169,7 +74,7 @@ main {
     gap: 14px;
 }
 
-.intro-caption::before {/*線と文字をFlexで横に並べて、中央をそろえる*/
+.intro-caption::before { /*線と文字をFlexで横に並べて、中央をそろえる*/
     content: "";
     width: 44px;
     height: 1px;
@@ -268,7 +173,7 @@ main {
 .routine-makeUp:hover {
     transform: translateY(-6px);
     box-shadow: 0 20px 55px rgba(69, 55, 65, 0.075);
-}/*:hover：マウスが乗っているとき
+} /*:hover：マウスが乗っているとき
 translateY(-6px)：上に6px動かす
 box-shadow：薄く広がる影を付ける
 transition：変化を0.3秒かけて滑らかにする*/
@@ -295,6 +200,7 @@ transition：変化を0.3秒かけて滑らかにする*/
     object-fit: cover;
     border-radius: 4px;
 }
+
 .routine-card-text {
     flex: 1;
     min-width: 0;
@@ -306,17 +212,17 @@ transition：変化を0.3秒かけて滑らかにする*/
     font-family: "Yu Gothic", Meiryo, sans-serif;
 }
 
-.routine-cards {/* 2つのカードを横に並べる */
+.routine-cards { /* 2つのカードを横に並べる */
     display: flex;
     gap: 24px;
 }
 
-.routine-cards > a {/* 2つのカードに同じ割合で幅を分けて、必要なら小さく縮められるようにする */
+.routine-cards > a { /* 2つのカードに同じ割合で幅を分けて、必要なら小さく縮められるようにする */
     flex: 1;
     min-width: 0;
 }
 
-.routine-card-text{
+.routine-card-text {
     font-family: "Yu Gothic", Meiryo, sans-serif;
 }
 
@@ -328,7 +234,7 @@ transition：変化を0.3秒かけて滑らかにする*/
 }
 
 /* 01/SKINCARE・02/MAKEUP */
-.routine-card-text p:first-child {/*:first-child親の最初の子要素であること*/
+.routine-card-text p:first-child { /*:first-child親の最初の子要素であること*/
     font-family: Georgia, serif;
     font-size: 13px;
     letter-spacing: 0.16em;

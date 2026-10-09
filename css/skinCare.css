@@ -1,0 +1,227 @@
+* {
+    box-sizing: border-box; /* 幅にpaddingと枠線を含める */
+}
+
+body {
+    margin: 0; /* ブラウザ標準の外側の余白を消す */
+}
+
+/*================================================================================
+メイン
+=================================================================================*/
+
+main {
+    background: #f4fafc;
+}
+
+.skinCare-intro {
+    max-width: 1298px;
+    margin: 0 auto;
+    padding: 34px 44px 30px;
+    display: flex;
+    align-items: center;
+    gap: 38px;
+}
+
+.skinCare-intro-text {
+    flex: 1;
+    min-width: 0; /*横幅が足りなくても縮めない*/
+}
+
+.skinCare-intro-photo {
+    width: 250px;
+    height: 174px;
+    flex-shrink: 0;
+    border-radius: 90px 90px 6px 6px; /*四隅を丸くする*/
+    overflow: hidden;
+}
+
+.skinCare-intro-photo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /*写真の比率を保ちながら枠いっぱいに埋める*/
+}
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin-bottom: 16px;
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    color: #276888;
+}
+
+.breadcrumb a {
+    color: inherit;
+    text-decoration: underline;
+}
+
+.skinCare-intro-text {
+    font-family: "Yu Gothic", Meiryo, sans-serif;
+}
+
+.skinCare-intro-text p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.8;
+    color: #626c74;
+}
+
+.skinCare-intro-text .skinCare-label {
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    color: #276888;
+}
+
+.skinCare-intro-text h1 {
+    font-family: "游明朝", "Yu Mincho", serif;
+    font-size: clamp(27px, 3vw, 40px); /*27px最小の文字サイズ,3vw基本のサイズ。画面幅の3％,40px最大の文字サイズ*/
+    font-weight: 500;
+    line-height: 1.5;
+    margin: 10px 0;
+    color: #303842;
+}
+
+.skinCare-content {
+    max-width: 1298px;
+    margin: 0 auto;
+    padding: 0 44px 40px;
+}
+
+.skinCare-tabs {
+    display: flex;
+    gap: 30px;
+    border-bottom: 1px solid #c7dfe9; /*下線の設定*/
+    margin-bottom: 28px; /*タブの箱の外側・下に28pxの余白を作る*/
+}
+
+.skinCare-tabs button { /*ボタンの標準の見た目を消して、余白や下線を設定している*/
+    background: none; /*ボタンの背景をなくす*/
+    border: none; /*ブラウザが標準で付けるボタンの枠線を消す*/
+    border-bottom: 3px solid transparent; /*下側だけ、太さ3pxの透明な実線*/
+    padding: 16px 6px;
+    min-height: 56px; /*ボタンの高さを最低56px*/
+    font-family: "Yu Gothic", Meiryo, sans-serif;
+    font-size: 16px;
+    color: #66727a;
+    cursor: pointer; /*カーソルを指の形*/
+}
+
+.skinCare-tabs button.is-active {
+    border-bottom-color: #276888;
+    color: #276888;
+    font-weight: 700;
+}
+
+.routine-steps {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    padding-bottom: 12px;
+}
+
+.routine-step {
+    flex: 0 0 300px; /*カードのサイズを固定*/
+    min-width: 0;
+    min-height: 230px;
+    padding: 24px;
+    background: #fff;
+    border: 1px solid #c7dfe9; /*四辺に枠線を付ける*/
+    border-radius: 8px; /*カードの四隅を丸める*/
+}
+
+.routine-heading {
+    margin-bottom: 20px;
+}
+
+.routine-heading-label {
+    margin: 0;
+    font-family: "Yu Gothic", Meiryo, sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    color: #276888;
+}
+
+.routine-heading h2 {
+    margin: 3px 0 0;
+    font-family: "游明朝", "Yu Mincho", serif;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.routine-step p {
+    margin: 0;
+    font-family: "Yu Gothic", Meiryo, sans-serif;
+    font-size: 16px;
+    line-height: 1.8;
+    color: #63717b;
+}
+
+.routine-step .routine-step-number {
+    font-size: 32px;
+    color: #276888;
+    opacity: 0.55; /*不透明度を55％*/
+}
+
+.routine-step h3 {
+    margin: 18px 0 10px;
+    font-family: "游明朝", "Yu Mincho", serif;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.skinCare-night {
+    margin-top: 40px;
+}
+
+.skinCare-items {
+    margin-top: 40px;
+}
+
+.item-card {
+    width: 100%;
+    background: #fff;
+    border: 1px solid #c7dfe9;
+    border-radius: 8px;
+    overflow: hidden;/*はみ出した部分を隠す*/
+}
+
+.item-card img {
+    display: block;
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+}
+
+.item-card-text {
+    padding: 20px;
+}
+
+.item-card-text p {
+    margin: 0;
+    font-family: "Yu Gothic", Meiryo, sans-serif;
+    font-size: 16px;
+    line-height: 1.8;
+    color: #68727b;
+}
+
+.item-card-text .item-kind {
+    font-size: 12px;
+    color: #276888;
+}
+
+.item-card-text h3 {
+    margin: 8px 0 12px;
+    font-family: "游明朝", "Yu Mincho", serif;
+    font-size: 21px;
+    font-weight: 500;
+    color: #303842;
+}
+
+.item-cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr)));
+    gap: 20px;
+}
