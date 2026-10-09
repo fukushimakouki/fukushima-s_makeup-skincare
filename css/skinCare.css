@@ -182,7 +182,7 @@ main {
 }
 
 .item-card {
-    width: 100%;
+    flex: 0 0 300px;
     background: #fff;
     border: 1px solid #c7dfe9;
     border-radius: 8px;
