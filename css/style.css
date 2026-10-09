@@ -7,14 +7,15 @@ body {
 }
 
 /*======================================================================
-色指定
+    色指定
 ========================================================================*/
+
 .pink {
     color: #d9789b;
 }
 
 /*================================================================
-メイン
+    メイン
 ===============================================================*/
 
 main {
@@ -29,19 +30,19 @@ main {
     display: flex;
     align-items: center;
     gap: 48px;
-    margin: 0 auto; /*全体を左右中央へ*/
+    margin: 0 auto; /* 全体を左右中央へ */
     padding: 60px 44px;
 }
 
 .intro-text {
-    flex: 1; /*文章の箱に、写真と間隔を除いた残りの幅を使わせる*/
+    flex: 1; /* 文章の箱に、写真と間隔を除いた残りの幅を使わせる */
 }
 
 .intro-title {
     font-family: "游明朝", "Yu Mincho", serif;
-    font-weight: 500;/*文字の太さ*/
+    font-weight: 500; /* 文字の太さ */
     font-size: 56px;
-    line-height: 1.63;/*一行の高さ*/
+    line-height: 1.63; /* 一行の高さ */
     letter-spacing: 0.065em;
     color: #333;
     margin: 0 0 24px;
@@ -74,7 +75,7 @@ main {
     gap: 14px;
 }
 
-.intro-caption::before { /*線と文字をFlexで横に並べて、中央をそろえる*/
+.intro-caption::before { /* 線と文字をFlexで横に並べて、中央をそろえる */
     content: "";
     width: 44px;
     height: 1px;
@@ -113,7 +114,7 @@ main {
 }
 
 /*================================================================
-ルーティン
+    ルーティン
 ===============================================================*/
 
 .routine-label {
@@ -173,10 +174,10 @@ main {
 .routine-makeUp:hover {
     transform: translateY(-6px);
     box-shadow: 0 20px 55px rgba(69, 55, 65, 0.075);
-} /*:hover：マウスが乗っているとき
-translateY(-6px)：上に6px動かす
-box-shadow：薄く広がる影を付ける
-transition：変化を0.3秒かけて滑らかにする*/
+} /* :hover：マウスが乗っているとき
+    translateY(-6px)：上に6px動かす
+    box-shadow：薄く広がる影を付ける
+    transition：変化を0.3秒かけて滑らかにする */
 
 .routine-skinCare {
     background: #f5fbff;
@@ -234,7 +235,7 @@ transition：変化を0.3秒かけて滑らかにする*/
 }
 
 /* 01/SKINCARE・02/MAKEUP */
-.routine-card-text p:first-child { /*:first-child親の最初の子要素であること*/
+.routine-card-text p:first-child { /* :first-child親の最初の子要素であること */
     font-family: Georgia, serif;
     font-size: 13px;
     letter-spacing: 0.16em;
