@@ -121,13 +121,13 @@ main {
 }
 
 .routine-step {
-    flex: 1;/*横並びの中で空いている幅を分け合う*/
+    flex: 1; /*横並びの中で空いている幅を分け合う*/
     min-width: 0;
     min-height: 230px;
     padding: 24px;
     background: #fff;
-    border: 1px solid #c7dfe9;/*四辺に枠線を付ける*/
-    border-radius: 8px;/*カードの四隅を丸める*/
+    border: 1px solid #c7dfe9; /*四辺に枠線を付ける*/
+    border-radius: 8px; /*カードの四隅を丸める*/
 }
 
 .routine-heading {
@@ -160,7 +160,7 @@ main {
 .routine-step .routine-step-number {
     font-size: 32px;
     color: #276888;
-    opacity: 0.55;/*不透明度を55％*/
+    opacity: 0.55; /*不透明度を55％*/
 }
 
 .routine-step h3 {
@@ -168,4 +168,8 @@ main {
     font-family: "游明朝", "Yu Mincho", serif;
     font-size: 20px;
     font-weight: 500;
+}
+
+.skinCare-night {
+    margin-top: 40px;
 }
