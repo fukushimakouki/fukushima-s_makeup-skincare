@@ -318,4 +318,11 @@ a:focus-visible {
     .dialog-text h2 {
         font-size: 25px;
     }
+
+    /* 商品の写真を、切り取らずに枠の中へ収める */
+.makeUp-content .item-card-photo img,
+.dialog-photo img {
+    object-fit: contain;
+    background: #fff;
+}
 }
