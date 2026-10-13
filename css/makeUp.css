@@ -325,4 +325,26 @@ a:focus-visible {
     object-fit: contain;
     background: #fff;
 }
+
+/* 使用アイテムをふわっと表示 */
+#items-panel {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+#items-panel.is-show {
+    animation: itemsFadeIn 0.8s ease forwards;
+}
+
+@keyframes itemsFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 }

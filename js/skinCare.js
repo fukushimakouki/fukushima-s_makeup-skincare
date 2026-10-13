@@ -28,18 +28,16 @@ const itemsPanel = document.getElementById("items-panel");
 
 itemsButton.addEventListener("click", () => {
 
-    // hidden は、要素を非表示にするかどうかの設定。
-    // true は「非表示にする」、false は「表示する」。
     routinePanel.hidden = true;
     itemsPanel.hidden = false;
 
-    // classList は、その要素に付いているクラスを扱うもの。
-    // remove は、指定したクラスを外す。
-    // ルーティンボタンの強調表示を外す。
-    routineButton.classList.remove("is-active");
+    itemsPanel.classList.remove("is-show");
 
-    // add は、指定したクラスを付ける。
-    // 使用アイテムボタンを強調表示する。
+    requestAnimationFrame(() => {
+        itemsPanel.classList.add("is-show");
+    });
+
+    routineButton.classList.remove("is-active");
     itemsButton.classList.add("is-active");
 });
 

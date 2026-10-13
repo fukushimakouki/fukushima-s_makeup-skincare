@@ -14,12 +14,15 @@ itemsButton.addEventListener("click", () => {
     routinePanel.hidden = true;
     itemsPanel.hidden = false;
 
-    // クラスを外す・付けることで、選んだタブを強調する。
+    itemsPanel.classList.remove("is-show");
+
+    requestAnimationFrame(() => {
+        itemsPanel.classList.add("is-show");
+    });
+
     routineButton.classList.remove("is-active");
     itemsButton.classList.add("is-active");
 
-    // setAttributeは、HTMLの属性の値を変更するもの。
-    // 読み上げ機能にも、ボタンの選択状態を伝える。
     routineButton.setAttribute("aria-pressed", "false");
     itemsButton.setAttribute("aria-pressed", "true");
 });
@@ -33,9 +36,7 @@ routineButton.addEventListener("click", () => {
     routineButton.classList.add("is-active");
 
     itemsButton.setAttribute("aria-pressed", "false");
-    routineButton.setAttribute("aria-pressed", "true");
-});
-
+    routineButton.setAttr
 /* =========================================================
    2. 詳細画面に表示する商品情報
 ========================================================= */
@@ -184,11 +185,9 @@ itemDialog.addEventListener("click", (event) => {
     // event.targetは、実際にクリックされた要素。
     // 写真や文章など、内部の要素を押した場合は終了する。
     if (event.target !== itemDialog) {
+if (event.target !== itemDialog) {
         return;
-    }
-
-    // 詳細画面の四辺の位置を取得する。
-    const rect = itemDialog.getBoundingClientRect();
+    } rect = itemDialog.getBoundingClientRect();
 
     // clientX・clientYは、クリックした位置。
     // ||は「または」。
@@ -209,6 +208,23 @@ itemDialog.addEventListener("click", (event) => {
 ========================================================= */
 
 // ×はform method="dialog"の仕組みで閉じる。
+// Escはブラウザーの標準機能で閉じる。
+// 背景クリックは、上のJSで閉じる。
+// どの方法でも、閉じたときにこの処理が実行される。
+
+itemDialog.addEventListener("close", () => {
+    document.body.classList.remove("dialog-open");
+});
+= */
+
+// ×はform method="dialog"の仕組みで閉じる。
+// Escはブラウザーの標準機能で閉じる。
+// 背景クリックは、上のJSで閉じる。
+// どの方法でも、閉じたときにこの処理が実行される。
+
+itemDialog.addEventListener("close", () => {
+    document.body.classList.remove("dialog-open");
+});で閉じる。
 // Escはブラウザーの標準機能で閉じる。
 // 背景クリックは、上のJSで閉じる。
 // どの方法でも、閉じたときにこの処理が実行される。
