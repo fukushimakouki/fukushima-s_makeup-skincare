@@ -68,6 +68,9 @@
                                 <p class="routine-step-number">01</p>
                                 <h3>洗顔</h3>
                                 <p>洗顔で、朝の肌を整える。</p>
+                                <button type="button" class="routine-item-button" data-product="facewash">
+                                    ビオレ ザフェイスの詳細
+                                </button>
                             </article>
 
                             <article class="routine-step">
@@ -80,6 +83,9 @@
                                 <p class="routine-step-number">03</p>
                                 <h3>化粧水</h3>
                                 <p>髭剃りの後に、アヌアの化粧水をなじませる。</p>
+                                <button type="button" class="routine-item-button" data-product="toner">
+                                    アヌアの化粧水の詳細
+                                </button>
                             </article>
                         </div>
                     </section>
@@ -98,6 +104,9 @@
                                 <p class="routine-step-number">01</p>
                                 <h3>クレンジング</h3>
                                 <p>クレンジングオイルで、メイクや皮脂をしっかり落とす</p>
+                                <button type="button" class="routine-item-button" data-product="cleansing">
+                                    ビオレ パーフェクトオイルの詳細
+                                </button>
                             </article>
 
                             <article class="routine-step">
@@ -110,24 +119,36 @@
                                 <p class="routine-step-number">03</p>
                                 <h3>洗顔</h3>
                                 <p>最後まで落とし切れていない汚れを落とす</p>
+                                <button type="button" class="routine-item-button" data-product="facewash">
+                                    ビオレ ザフェイスの詳細
+                                </button>
                             </article>
 
                             <article class="routine-step">
                                 <p class="routine-step-number">04</p>
                                 <h3>化粧水</h3>
                                 <p>乾燥する前に、化粧水をなじませる</p>
+                                <button type="button" class="routine-item-button" data-product="toner">
+                                    アヌアの化粧水の詳細
+                                </button>
                             </article>
 
                             <article class="routine-step">
                                 <p class="routine-step-number">05</p>
                                 <h3>美容液</h3>
                                 <p>化粧水の後に美容液をなじませる</p>
+                                <button type="button" class="routine-item-button" data-product="serum">
+                                    アヌアの美容液の詳細
+                                </button>
                             </article>
 
                             <article class="routine-step">
                                 <p class="routine-step-number">06</p>
                                 <h3>乳液</h3>
                                 <p>化粧水、美容液は乾きやすいので、乳液で蓋をしましょう</p>
+                                <button type="button" class="routine-item-button" data-product="milk">
+                                    アクアレーベルの乳液の詳細
+                                </button>
                             </article>
                         </div>
                     </section>
@@ -145,60 +166,92 @@
                     <div class="item-cards">
                         <article class="item-card">
                             <div class="item-card-photo">
-                            <img src="images/水面に横たうビオレ パーフェクトオイル-1.png" alt="クレンジングオイルの写真">
+                                <img src="images/水面に横たうビオレ パーフェクトオイル-1.png" alt="クレンジングオイルの写真">
                             </div>
+
                             <div class="item-card-text">
                                 <p class="item-kind">クレンジングオイル</p>
                                 <h3>ビオレ パーフェクトオイル</h3>
                                 <p>メイク落としや皮脂を落とすために使っています。</p>
 
-                                <p>メイク落としや皮脂を落とすために使っています。</p>
-
-                                <button type="button" class="item-detail-button" id="cleansing-detail-button">商品詳細を見る</button>
+                                <button type="button" class="item-detail-button"
+                                        id="cleansing-detail-button"
+                                        data-product="cleansing"
+                                        aria-label="ビオレ パーフェクトオイルの商品詳細を見る">
+                                    商品詳細を見る
+                                </button>
                             </div>
                         </article>
 
                         <article class="item-card">
                             <div class="item-card-photo">
-                            <img src="images/淡い水面に浮かぶビオレ ザ フェイス.png" alt="洗顔の写真">
+                                <img src="images/淡い水面に浮かぶビオレ ザ フェイス.png" alt="洗顔の写真">
                             </div>
+
                             <div class="item-card-text">
                                 <p class="item-kind">洗顔料</p>
                                 <h3>ビオレ ザフェイス</h3>
                                 <p>朝と夜の洗顔に使っています。</p>
+
+                                <button type="button" class="item-detail-button"
+                                        data-product="facewash"
+                                        aria-label="ビオレ ザフェイスの商品詳細を見る">
+                                    商品詳細を見る
+                                </button>
                             </div>
                         </article>
 
                         <article class="item-card">
                             <div class="item-card-photo">
-                            <img src="images/水面に立つターコイズミスト-2.png" alt="化粧水の写真">
+                                <img src="images/水面に立つターコイズミスト-2.png" alt="化粧水の写真">
                             </div>
+
                             <div class="item-card-text">
                                 <p class="item-kind">化粧水</p>
                                 <h3>PDRNヒアルロン酸 ハイドレイティングミスト</h3>
                                 <p>朝と夜の保湿に使っています。</p>
+
+                                <button type="button" class="item-detail-button"
+                                        data-product="toner"
+                                        aria-label="アヌアの化粧水の商品詳細を見る">
+                                    商品詳細を見る
+                                </button>
                             </div>
                         </article>
 
                         <article class="item-card">
                             <div class="item-card-photo">
-                            <img src="images/水面に佇むターコイズ美容液-4.png" alt="美容液の写真">
+                                <img src="images/水面に佇むターコイズ美容液-4.png" alt="美容液の写真">
                             </div>
+
                             <div class="item-card-text">
                                 <p class="item-kind">美容液</p>
                                 <h3>ANUA(アヌア) PDRNヒアルロン酸カプセル100セラム30ml 美容液</h3>
                                 <p>夜の保湿とニキビ対策に使っています。</p>
+
+                                <button type="button" class="item-detail-button"
+                                        data-product="serum"
+                                        aria-label="アヌアの美容液の商品詳細を見る">
+                                    商品詳細を見る
+                                </button>
                             </div>
                         </article>
 
                         <article class="item-card">
                             <div class="item-card-photo">
-                            <img src="images/水面に佇む青いアクアレーベル-5.png" alt="乳液の写真">
+                                <img src="images/水面に佇む青いアクアレーベル-5.png" alt="乳液の写真">
                             </div>
+
                             <div class="item-card-text">
                                 <p class="item-kind">乳液</p>
                                 <h3>アクアレーベル 乳液 トリートメントミルク ブライトニング</h3>
                                 <p>夜の保湿に使っています。</p>
+
+                                <button type="button" class="item-detail-button"
+                                        data-product="milk"
+                                        aria-label="アクアレーベルの乳液の商品詳細を見る">
+                                    商品詳細を見る
+                                </button>
                             </div>
                         </article>
                     </div>
@@ -207,17 +260,19 @@
         </main>
 
         <!-- 商品の詳細画面 -->
-        <!-- ページの上に開く、詳細画面などに使うタグ。 -->
         <dialog id="item-dialog" class="item-dialog" aria-labelledby="dialog-title">
-            <!-- 中の送信ボタンを押すと、この詳細画面を閉じる -->
+            <!-- このフォームのボタンを押すと詳細画面が閉じる -->
             <form method="dialog">
-                <button type="submit" class="dialog-close" aria-label="商品詳細を閉じる">×</button>
+                <button type="submit" class="dialog-close" aria-label="商品詳細を閉じる">
+                    ×
+                </button>
             </form>
 
             <div class="dialog-layout">
                 <div class="dialog-photo">
-                    <!-- あとでJSから写真・商品名・説明を差し替えるための目印。 -->
-                    <img id="dialog-image" src="images/水面に横たうビオレ パーフェクトオイル-1.png" alt="ビオレ パーフェクトオイル">
+                    <img id="dialog-image"
+                         src="images/水面に横たうビオレ パーフェクトオイル-1.png"
+                         alt="ビオレ パーフェクトオイル">
                 </div>
 
                 <div class="dialog-text">
