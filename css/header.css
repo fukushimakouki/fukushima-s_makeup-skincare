@@ -84,8 +84,13 @@ header {
     background: #d9789b;
 }
 
-header,
 .intro {
     max-width: 1298px;
     margin: 0 auto;
+}
+
+header {
+    width: 100%;
+    max-width: none;
+    margin: 0;
 }
