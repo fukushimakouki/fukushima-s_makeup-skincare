@@ -142,10 +142,9 @@
                         </div>
                     </div>
 
-
                     <div class="item-cards">
                         <article class="item-card">
-                            <img src="images/水面に横たうビオレ パーフェクトオイル-1.png" alt="洗顔の写真">
+                            <img src="images/水面に横たうビオレ パーフェクトオイル-1.png" alt="クレンジングオイルの写真">
 
                             <div class="item-card-text">
                                 <p class="item-kind">クレンジングオイル</p>
@@ -197,6 +196,26 @@
                 </section>
             </section>
         </main>
+
+        <!-- 商品の詳細画面 -->
+        <dialog id="item-dialog" class="item-dialog" aria-labelledby="dialog-title">//ページの上に開く、詳細画面などに使うタグ。
+            <form method="dialog">//中の送信ボタンを押すと、この詳細画面を閉じる
+                <button type="submit" class="dialog-close" aria-label="商品詳細を閉じる">×</button>
+            </form>
+
+            <div class="dialog-layout">
+                <div class="dialog-photo">
+                    <img id="dialog-image" src="images/水面に横たうビオレ パーフェクトオイル-1.png" alt="ビオレ パーフェクトオイル">//あとでJSから写真・商品名・説明を差し替えるための目印。
+                </div>
+
+                <div class="dialog-text">
+                    <p id="dialog-kind" class="dialog-kind">クレンジングオイル</p>
+                    <h2 id="dialog-title">ビオレ パーフェクトオイル</h2>
+                    <p id="dialog-description">メイク落としに使っています。</p>
+                </div>
+            </div>
+        </dialog>
+
         <script src="js/skinCare.js"></script>
     </body>
 </html>
