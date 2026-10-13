@@ -19,3 +19,11 @@ routineButton.addEventListener("click", () => {
     itemsButton.classList.remove("is-active");
     routineButton.classList.add("is-active");
 });
+
+const itemDialog = document.getElementById("item-dialog");
+const cleansingDetailButton =
+    document.getElementById("cleansing-detail-button");
+
+cleansingDetailButton.addEventListener("click", () => {
+    itemDialog.showModal();
+});

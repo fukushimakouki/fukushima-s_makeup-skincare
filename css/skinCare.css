@@ -244,13 +244,13 @@ main {
 /* 詳細画面の後ろにある暗い背景 */
 .item-dialog::backdrop {
     background: rgba(33, 40, 45, 0.5);
-    backdrop-filter: blur(6px);/*後ろに見えるものを、ぼかす指定*/
+    backdrop-filter: blur(6px); /* 後ろに見えるものを、ぼかす指定 */
 }
 
 /* 写真と文章を横に並べる */
 .dialog-layout {
     display: grid;
-    grid-template-columns: 45% 55%;/*横に並べる列の幅を決める指定*/
+    grid-template-columns: 45% 55%; /* 横に並べる列の幅を決める指定 */
 }
 
 .dialog-photo img {
@@ -302,6 +302,18 @@ main {
     background: #fff;
     color: #686c70;
     font-size: 24px;
-    cursor: pointer;/*マウスを乗せたとき、カーソルを指の形にする*/
+    cursor: pointer; /* マウスを乗せたとき、カーソルを指の形にする */
     box-shadow: 0 2px 9px rgba(50, 50, 50, 0.1);
+}
+
+.item-detail-button {
+    margin-top: 14px;
+    padding: 0;
+    background: none;
+    border: none;
+    font-family: "Yu Gothic", Meiryo, sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: #276888;
+    cursor: pointer;
 }

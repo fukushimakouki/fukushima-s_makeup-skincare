@@ -150,6 +150,10 @@
                                 <p class="item-kind">クレンジングオイル</p>
                                 <h3>ビオレ パーフェクトオイル</h3>
                                 <p>メイク落としや皮脂を落とすために使っています。</p>
+
+                                <p>メイク落としや皮脂を落とすために使っています。</p>
+
+                                <button type="button" class="item-detail-button" id="cleansing-detail-button">商品詳細を見る</button>
                             </div>
                         </article>
 
@@ -198,14 +202,17 @@
         </main>
 
         <!-- 商品の詳細画面 -->
-        <dialog id="item-dialog" class="item-dialog" aria-labelledby="dialog-title">//ページの上に開く、詳細画面などに使うタグ。
-            <form method="dialog">//中の送信ボタンを押すと、この詳細画面を閉じる
+        <!-- ページの上に開く、詳細画面などに使うタグ。 -->
+        <dialog id="item-dialog" class="item-dialog" aria-labelledby="dialog-title">
+            <!-- 中の送信ボタンを押すと、この詳細画面を閉じる -->
+            <form method="dialog">
                 <button type="submit" class="dialog-close" aria-label="商品詳細を閉じる">×</button>
             </form>
 
             <div class="dialog-layout">
                 <div class="dialog-photo">
-                    <img id="dialog-image" src="images/水面に横たうビオレ パーフェクトオイル-1.png" alt="ビオレ パーフェクトオイル">//あとでJSから写真・商品名・説明を差し替えるための目印。
+                    <!-- あとでJSから写真・商品名・説明を差し替えるための目印。 -->
+                    <img id="dialog-image" src="images/水面に横たうビオレ パーフェクトオイル-1.png" alt="ビオレ パーフェクトオイル">
                 </div>
 
                 <div class="dialog-text">
