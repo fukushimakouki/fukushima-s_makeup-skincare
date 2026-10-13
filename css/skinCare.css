@@ -343,3 +343,30 @@ main {
     position: absolute;
     inset: 0;
 }
+
+/* ルーティンの詳細ボタンをカード下部に配置 */
+.routine-step {
+    display: flex;
+    flex-direction: column;
+}
+
+.routine-item-button {
+    margin-top: auto;
+    align-self: flex-start;
+    padding: 18px 0 0;
+    background: none;
+    border: none;
+    font-family: "Yu Gothic", Meiryo, sans-serif;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #276888;
+    text-align: left;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    cursor: pointer;
+}
+
+/* 詳細画面を開いている間は背景のスクロールを止める */
+body.dialog-open {
+    overflow: hidden;
+}
