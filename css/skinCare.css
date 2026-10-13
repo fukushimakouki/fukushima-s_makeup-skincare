@@ -188,7 +188,6 @@ main {
     border: 1px solid #c7dfe9;
     border-radius: 8px;
     overflow: hidden; /* はみ出した部分を隠す */
-    position: relative;
     cursor: pointer;
     transition: transform 0.25s, box-shadow 0.25s;
 }
