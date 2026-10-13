@@ -1,235 +1,423 @@
 /* =========================================================
-   1. タブ切り替えに使うHTMLの要素を取得する
+   1. タブ切り替えに使うHTML要素を取得する
 ========================================================= */
 
-// getElementByIdは、指定したidの要素を探す命令。
+// 「ルーティン」ボタン
 const routineButton = document.getElementById("routine-button");
+
+// 「使用アイテム」ボタン
 const itemsButton = document.getElementById("items-button");
+
+// メイク手順が入っている部分
 const routinePanel = document.getElementById("routine-panel");
+
+// 使用アイテム一覧が入っている部分
 const itemsPanel = document.getElementById("items-panel");
 
-// 使用アイテムを押したら、商品一覧を表示する。
-// hidden=trueは非表示、falseは表示。
+
+/* =========================================================
+   2. 「使用アイテム」を押したとき
+========================================================= */
+
 itemsButton.addEventListener("click", () => {
+
+    // ルーティンを非表示
     routinePanel.hidden = true;
+
+    // 使用アイテムを表示
     itemsPanel.hidden = false;
 
+
+    // -----------------------------------------------------
+    // 使用アイテムをふわっと表示するための処理
+    // -----------------------------------------------------
+
+    // 一度 is-show を外す
+    // これによって、何度押してもアニメーションを再実行できる
     itemsPanel.classList.remove("is-show");
 
+    // ブラウザが一度画面を描画してから is-show を付ける
     requestAnimationFrame(() => {
         itemsPanel.classList.add("is-show");
     });
 
+
+    // -----------------------------------------------------
+    // タブの見た目を変更
+    // -----------------------------------------------------
+
+    // ルーティンの選択状態を解除
     routineButton.classList.remove("is-active");
+
+    // 使用アイテムを選択状態にする
     itemsButton.classList.add("is-active");
+
+
+    // -----------------------------------------------------
+    // aria-pressed
+    // 読み上げ機能などに現在の選択状態を伝える
+    // -----------------------------------------------------
 
     routineButton.setAttribute("aria-pressed", "false");
     itemsButton.setAttribute("aria-pressed", "true");
 });
 
-// ルーティンを押したら、手順を表示する。
+
+/* =========================================================
+   3. 「ルーティン」を押したとき
+========================================================= */
+
 routineButton.addEventListener("click", () => {
+
+    // ルーティンを表示
     routinePanel.hidden = false;
+
+    // 使用アイテムを非表示
     itemsPanel.hidden = true;
 
+
+    // タブの見た目を変更
     itemsButton.classList.remove("is-active");
     routineButton.classList.add("is-active");
 
+
+    // 現在の選択状態を設定
     itemsButton.setAttribute("aria-pressed", "false");
     routineButton.setAttribute("aria-pressed", "true");
 });
+
+
 /* =========================================================
-   2. 詳細画面に表示する商品情報
+   4. 商品詳細に表示する情報
 ========================================================= */
 
-// primerなどの名前は、HTMLのdata-productと対応する。
-//
-// name        → 商品名
-// kind        → 商品の種類
-// image       → 写真のファイルの場所
-// description → 説明文
-//
-// 商品名・説明文・写真を変更するときは、この中を書き換える。
-// imageがnullの商品は「写真準備中」を表示する。
-//
-// 下地とファンデーションは、今ある2商品一緒の写真を使う。
+/*
+    HTMLの
 
-// HTMLのdata-productと、下の商品名の目印が対応する。
-// 商品名・写真・詳しい説明を、ここにまとめる。
+    data-product="concealer"
+    data-product="primer"
+
+    などと、下の名前が対応している。
+
+    name
+        商品名
+
+    kind
+        商品の種類
+
+    image
+        表示する写真
+
+    description
+        詳細画面に表示する説明
+*/
+
 const products = {
 
-    // クレンジング
-    cleansing: {
-        name: "ビオレ メイク落とし パーフェクトオイル",
-        kind: "クレンジングオイル",
-        image: "images/水面に横たうビオレ パーフェクトオイル-1.png",
+    /* -----------------------------------------------------
+       コンシーラー
+    ----------------------------------------------------- */
+    concealer: {
+        name: "COSCOS パーフェクトマットコンシーラー スカーレットオレンジ",
+
+        kind: "オレンジコンシーラー",
+
+        image: "images/image(20261013-043211).png",
+
         description:
-            "メイクとなじませて洗い流す、オイルタイプのクレンジング。手や顔がぬれていても使えるのが特徴です。夜のスキンケアの最初に使い、下地やファンデーションなどのメイクを落とします。"
+            "青髭の青みを目立ちにくくするために使っているオレンジコンシーラーです。髭剃り後に気になる部分へ少量ずつのせ、肌になじませてから下地を重ねています。"
     },
 
-    // 洗顔
-    facewash: {
-        name: "ビオレ ザフェイス 泡洗顔料 スムースクリア",
-        kind: "泡洗顔料",
-        image: "images/淡い水面に浮かぶビオレ ザ フェイス.png",
+
+    /* -----------------------------------------------------
+       化粧下地
+    ----------------------------------------------------- */
+    primer: {
+        name: "エレガンス モデリング カラーベース UV",
+
+        kind: "化粧下地",
+
+        image: "images/image(20261013-043250).png",
+
         description:
-            "ポンプを押すと泡で出てくる洗顔料。泡を肌になじませ、毛穴の汚れや余分な皮脂を洗い流します。朝と夜の洗顔に使い、強くこすらず、泡を顔全体になじませてからすすぎます。"
+            "ファンデーションを塗る前に使っている化粧下地です。肌の色ムラや質感を整え、ベースメイクをきれいに仕上げるために使っています。"
     },
 
-    // 化粧水
-    toner: {
-        name: "アヌア PDRNヒアルロン酸 ハイドレイティングミスト",
-        kind: "ミスト化粧水",
-        image: "images/水面に立つターコイズミスト-2.png",
+
+    /* -----------------------------------------------------
+       ファンデーション
+    ----------------------------------------------------- */
+    foundation: {
+        name: "アルビオン スタジオ ミルク ファンデーション",
+
+        kind: "ファンデーション",
+
+        image: "images/image(20261013-043324).png",
+
         description:
-            "きめ細かなミストが肌に広がり、うるおいと自然なツヤを与える化粧水。軽やかになじむのが特徴です。朝と夜の保湿に取り入れ、洗顔や髭剃りの後の肌を整えます。"
+            "肌の気になる部分をカバーしながら、自然なツヤのある仕上がりにするために使っています。下地の後に顔全体へ薄くなじませています。"
     },
 
-    // 美容液
-    serum: {
-        name: "アヌア PDRNヒアルロン酸 カプセル100セラム",
-        kind: "美容液",
-        image: "images/水面に佇むターコイズ美容液-4.png",
+
+    /* -----------------------------------------------------
+       メイクキープミスト
+    ----------------------------------------------------- */
+    mist: {
+        name: "コーセー メイク キープ ミスト EX",
+
+        kind: "メイクキープミスト",
+
+        image: "images/image(20261013-043542).png",
+
         description:
-            "PDRN（DNA-Na）やヒアルロン酸などの整肌成分を配合した美容液。肌にうるおいを与え、キメを整えます。自分のルーティンでは夜の化粧水の後に使い、保湿ケアを重ねています。"
+            "完成したメイクを長時間キープするために使っています。汗や皮脂による化粧崩れを抑えるため、ベースメイクの仕上げに顔全体へ吹きかけています。"
     },
 
-    // 乳液
-    milk: {
-        name: "アクアレーベル トリートメントミルク（ブライトニング）",
-        kind: "薬用美白乳液",
-        image: "images/水面に佇む青いアクアレーベル-5.png",
+
+    /* -----------------------------------------------------
+       フェイスパウダー
+    ----------------------------------------------------- */
+    powder: {
+        name: "パーフェクトダイアリー トランスルーシェント ブルーリング ルースパウダー 2.0",
+
+        kind: "フェイスパウダー",
+
+        image: "images/download.png",
+
         description:
-            "肌のうるおいを保ちながら、美白ケアもできる薬用乳液。美白有効成分4MSKがメラニンの生成を抑え、シミ・そばかすを防ぎます。夜は化粧水と美容液の後になじませ、保湿の仕上げに使っています。（医薬部外品）"
+            "ベースメイクの仕上げに使っているフェイスパウダーです。余分な皮脂やテカリを抑え、さらっとした肌に整えるために使っています。"
     }
 };
 
+
 /* =========================================================
-   3. 詳細画面と、内容を書き換える場所を取得する
+   5. 商品詳細画面のHTML要素を取得する
 ========================================================= */
 
+// 商品詳細のdialog全体
 const itemDialog = document.getElementById("item-dialog");
+
+// 商品写真
 const dialogImage = document.getElementById("dialog-image");
 
-// 写真がない場合に表示する「写真準備中」の文字。
+// 写真がない場合の「写真準備中」
 const dialogNoImage = document.getElementById("dialog-no-image");
 
+// 商品の種類
 const dialogKind = document.getElementById("dialog-kind");
+
+// 商品名
 const dialogTitle = document.getElementById("dialog-title");
-const dialogDescription = document.getElementById("dialog-description");
+
+// 商品説明
+const dialogDescription = document.getElementById(
+    "dialog-description"
+);
+
 
 /* =========================================================
-   4. 詳細ボタンを押したときの処理
+   6. 「商品詳細を見る」を押したとき
 ========================================================= */
 
-// data-productが付いたbuttonをすべて探す。
-// forEachで、見つかったボタンを1つずつ処理する。
-// 商品一覧とルーティンの両方のボタンが対象になる。
+/*
+    button[data-product]
 
-document.querySelectorAll("button[data-product]").forEach((button) => {
+    は、
 
-    button.addEventListener("click", () => {
+    data-product="concealer"
 
-        // 例：data-product="primer"なら、
-        // productsの中にあるprimerの商品情報を取り出す。
-        const product = products[button.dataset.product];
+    のような属性を持っているボタンを
+    すべて取得するという意味。
+*/
 
-        // 対応する商品がなければ、ここで処理を終える。
-        if (!product) {
+document
+    .querySelectorAll("button[data-product]")
+    .forEach((button) => {
+
+        button.addEventListener("click", () => {
+
+            /*
+                押したボタンの data-product を取得。
+
+                例
+
+                data-product="primer"
+
+                ↓
+
+                products.primer
+
+                の情報が取り出される。
+            */
+
+            const product =
+                products[button.dataset.product];
+
+
+            // 商品情報が見つからない場合は何もしない
+            if (!product) {
+                return;
+            }
+
+
+            /* ---------------------------------------------
+               商品名などを書き換える
+            --------------------------------------------- */
+
+            dialogKind.textContent =
+                product.kind;
+
+            dialogTitle.textContent =
+                product.name;
+
+            dialogDescription.textContent =
+                product.description;
+
+
+            /* ---------------------------------------------
+               商品写真を変更
+            --------------------------------------------- */
+
+            if (product.image) {
+
+                // 商品写真を設定
+                dialogImage.src =
+                    product.image;
+
+                // altにも商品名を設定
+                dialogImage.alt =
+                    product.name;
+
+                // 写真を表示
+                dialogImage.hidden =
+                    false;
+
+                // 「写真準備中」を非表示
+                dialogNoImage.hidden =
+                    true;
+
+            } else {
+
+                // 写真がない場合
+                dialogImage.hidden =
+                    true;
+
+                // 前の商品画像を消す
+                dialogImage.removeAttribute(
+                    "src"
+                );
+
+                dialogImage.alt = "";
+
+                // 「写真準備中」を表示
+                dialogNoImage.hidden =
+                    false;
+            }
+
+
+            /* ---------------------------------------------
+               商品詳細画面を開く
+            --------------------------------------------- */
+
+            itemDialog.showModal();
+
+
+            /*
+                詳細画面を開いている間、
+                背景ページをスクロールできないようにする
+            */
+
+            document.body.classList.add(
+                "dialog-open"
+            );
+        });
+    });
+
+
+/* =========================================================
+   7. 商品詳細の暗い背景を押したとき
+========================================================= */
+
+itemDialog.addEventListener(
+    "click",
+    (event) => {
+
+        /*
+            dialogの中の写真や文章を押した場合は
+            何もしない。
+
+            dialog自体を押した場合だけ
+            背景クリックの判定へ進む。
+        */
+
+        if (event.target !== itemDialog) {
             return;
         }
 
-        // textContentは、HTMLの要素の中の文字を変更するもの。
-        dialogKind.textContent = product.kind;
-        dialogTitle.textContent = product.name;
-        dialogDescription.textContent = product.description;
 
-        // 写真がある商品と、まだない商品を分ける。
-        if (product.image) {
+        /*
+            dialog本体が画面のどこにあるか取得する。
 
-            // 写真がある場合は、画像を設定して表示する。
-            dialogImage.src = product.image;
-            dialogImage.alt = product.name;
-            dialogImage.hidden = false;
+            left
+            right
+            top
+            bottom
 
-            // 「写真準備中」は隠す。
-            dialogNoImage.hidden = true;
+            の位置が取得できる。
+        */
 
-        } else {
+        const rect =
+            itemDialog.getBoundingClientRect();
 
-            // 写真がない場合は、画像を隠す。
-            dialogImage.hidden = true;
 
-            // removeAttributeは、指定した属性を外すもの。
-            // 前に表示していた商品の画像の指定を外す。
-            dialogImage.removeAttribute("src");
-            dialogImage.alt = "";
+        /*
+            クリックした場所が
+            dialog本体より外側かどうか調べる。
+        */
 
-            // 「写真準備中」の文字を表示する。
-            dialogNoImage.hidden = false;
+        const outside =
+
+            event.clientX < rect.left ||
+
+            event.clientX > rect.right ||
+
+            event.clientY < rect.top ||
+
+            event.clientY > rect.bottom;
+
+
+        // 外側なら商品詳細を閉じる
+        if (outside) {
+            itemDialog.close();
         }
-
-        // 詳細画面を開く。
-        itemDialog.showModal();
-
-        // 背景のスクロールを止めるためのクラスを付ける。
-        document.body.classList.add("dialog-open");
-    });
-});
-
-/* =========================================================
-   5. 暗い背景を押したら詳細画面を閉じる
-========================================================= */
-
-itemDialog.addEventListener("click", (event) => {
-
-    // event.targetは、実際にクリックされた要素。
-    // 写真や文章など、内部の要素を押した場合は終了する。
-    if (event.target !== itemDialog) {
-if (event.target !== itemDialog) {
-        return;
-    } rect = itemDialog.getBoundingClientRect();
-
-    // clientX・clientYは、クリックした位置。
-    // ||は「または」。
-    // 四辺のどれかを超えていれば、外側を押したと判定する。
-    const outside =
-        event.clientX < rect.left ||
-        event.clientX > rect.right ||
-        event.clientY < rect.top ||
-        event.clientY > rect.bottom;
-
-    if (outside) {
-        itemDialog.close();
     }
-});
+);
+
 
 /* =========================================================
-   6. 閉じたら、背景のスクロールを戻す
+   8. 商品詳細を閉じたとき
 ========================================================= */
 
-// ×はform method="dialog"の仕組みで閉じる。
-// Escはブラウザーの標準機能で閉じる。
-// 背景クリックは、上のJSで閉じる。
-// どの方法でも、閉じたときにこの処理が実行される。
+/*
+    ×ボタン
+    Escキー
+    背景クリック
 
-itemDialog.addEventListener("close", () => {
-    document.body.classList.remove("dialog-open");
-});
-= */
+    どの方法で閉じても
+    closeイベントが実行される。
+*/
 
-// ×はform method="dialog"の仕組みで閉じる。
-// Escはブラウザーの標準機能で閉じる。
-// 背景クリックは、上のJSで閉じる。
-// どの方法でも、閉じたときにこの処理が実行される。
+itemDialog.addEventListener(
+    "close",
+    () => {
 
-itemDialog.addEventListener("close", () => {
-    document.body.classList.remove("dialog-open");
-});で閉じる。
-// Escはブラウザーの標準機能で閉じる。
-// 背景クリックは、上のJSで閉じる。
-// どの方法でも、閉じたときにこの処理が実行される。
+        /*
+            bodyから dialog-open を外して、
+            ページを再びスクロールできるようにする。
+        */
 
-itemDialog.addEventListener("close", () => {
-    document.body.classList.remove("dialog-open");
-});
+        document.body.classList.remove(
+            "dialog-open"
+        );
+    }
+);
