@@ -36,7 +36,8 @@ routineButton.addEventListener("click", () => {
     routineButton.classList.add("is-active");
 
     itemsButton.setAttribute("aria-pressed", "false");
-    routineButton.setAttr
+    routineButton.setAttribute("aria-pressed", "true");
+});
 /* =========================================================
    2. 詳細画面に表示する商品情報
 ========================================================= */
