@@ -112,9 +112,14 @@ document.addEventListener("click", (event) => {
         `page-transition page-transition--${effect} is-running`;
 
     // 色が画面を覆ってから、リンク先へ移動する。
+    // メイクはジグザグに塗るので、1秒待つ。
+    const duration =
+        effect === "makeup" ? 1000 :
+        effect === "top" ? 600 : 650;
+
     setTimeout(() => {
         location.assign(destination.href);
-    }, effect === "top" ? 600 : 650);
+    }, duration);
 });
 
 // ブラウザーの「戻る」で戻ったとき、演出を解除する。
