@@ -1,0 +1,122 @@
+/* ページ切り替え中、画面全体を覆う */
+.page-transition {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+/* 切り替え中は連続クリックを防ぐ */
+.page-transition.is-running {
+    pointer-events: auto;
+}
+
+/* 色や波紋を描く共通部分 */
+.page-transition::before,
+.page-transition::after {
+    content: "";
+    position: absolute;
+    opacity: 0;
+}
+
+/* TOP：クリックした場所からピンクが広がる */
+.page-transition--top::before {
+    left: var(--click-x);
+    top: var(--click-y);
+    width: 200vmax;
+    height: 200vmax;
+    border-radius: 50%;
+    background: #f3c6d7;
+    animation: pink-spread 600ms ease-in-out forwards;
+}
+
+@keyframes pink-spread {
+    from {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+/* スキンケア：水色と波紋が広がる */
+.page-transition--skincare::before,
+.page-transition--skincare::after {
+    left: var(--click-x);
+    top: var(--click-y);
+    width: 200vmax;
+    height: 200vmax;
+    border-radius: 50%;
+}
+
+.page-transition--skincare::before {
+    background: #dceff5;
+    animation: pink-spread 650ms ease-in-out forwards;
+}
+
+.page-transition--skincare::after {
+    /* 半透明の白い輪を重ねる */
+    background: radial-gradient(
+        circle,
+        transparent 35%,
+        rgb(255 255 255 / 65%) 36%,
+        transparent 38%,
+        transparent 48%,
+        rgb(255 255 255 / 55%) 49%,
+        transparent 51%,
+        transparent 62%,
+        rgb(255 255 255 / 45%) 63%,
+        transparent 65%
+    );
+    animation: water-ripple 650ms ease-out forwards;
+}
+
+@keyframes water-ripple {
+    from {
+        opacity: 0.9;
+        transform: translate(-50%, -50%) scale(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+/* メイク：刷毛で塗るようにベージュが横へ広がる */
+.page-transition--makeup::before {
+    inset: -10% -20%;
+    background: #e7cbb5;
+
+    /* 塗り進む端を少し不揃いにする */
+    clip-path: polygon(
+        0 0, 96% 0, 99% 12%, 95% 25%,
+        100% 38%, 96% 52%, 99% 66%,
+        95% 80%, 98% 100%, 0 100%
+    );
+
+    animation: foundation-wipe 650ms ease-in-out forwards;
+}
+
+@keyframes foundation-wipe {
+    from {
+        opacity: 1;
+        transform: translateX(-110%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* 動きを減らす設定のときは演出を省略 */
+@media (prefers-reduced-motion: reduce) {
+    .page-transition {
+        display: none;
+    }
+}

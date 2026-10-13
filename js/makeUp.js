@@ -36,7 +36,6 @@ routineButton.addEventListener("click", () => {
     routineButton.setAttribute("aria-pressed", "true");
 });
 
-
 /* =========================================================
    2. 詳細画面に表示する商品情報
 ========================================================= */
@@ -103,7 +102,6 @@ const products = {
     }
 };
 
-
 /* =========================================================
    3. 詳細画面と、内容を書き換える場所を取得する
 ========================================================= */
@@ -117,7 +115,6 @@ const dialogNoImage = document.getElementById("dialog-no-image");
 const dialogKind = document.getElementById("dialog-kind");
 const dialogTitle = document.getElementById("dialog-title");
 const dialogDescription = document.getElementById("dialog-description");
-
 
 /* =========================================================
    4. 詳細ボタンを押したときの処理
@@ -178,7 +175,6 @@ document.querySelectorAll("button[data-product]").forEach((button) => {
     });
 });
 
-
 /* =========================================================
    5. 暗い背景を押したら詳細画面を閉じる
 ========================================================= */
@@ -207,7 +203,6 @@ itemDialog.addEventListener("click", (event) => {
         itemDialog.close();
     }
 });
-
 
 /* =========================================================
    6. 閉じたら、背景のスクロールを戻す

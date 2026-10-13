@@ -1,328 +1,329 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/makeUp.css">
-    <link rel="stylesheet" href="css/header.css">
-    <title>ふっくーのメイク</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/makeUp.css">
+        <link rel="stylesheet" href="css/header.css">
+        <link rel="stylesheet" href="css/transition.css">
+        <title>ふっくーのメイク</title>
+    </head>
 
-<body>
-    <!-- ヘッダー -->
-    <header>
-        <a href="index.html" class="site-logo">
-            <img src="images/icon/sakura-mark.svg"
-                 alt="ふっくーのメイク・スキンケア"
-                 class="site-icon">
+    <body>
+        <!-- ヘッダー -->
+        <header>
+            <a href="index.html" class="site-logo">
+                <img src="images/icon/sakura-mark.svg"
+                    alt="ふっくーのメイク・スキンケア"
+                    class="site-icon">
 
-            <span class="site-text">
-                <span class="site-logo__title">Fukku Beauty.</span>
-                <span class="site-logo__subtitle">
+                <span class="site-text">
+                    <span class="site-logo__title">Fukku Beauty.</span>
+                    <span class="site-logo__subtitle">
                     MY SKINCARE &amp; MAKEUP
+                    </span>
                 </span>
-            </span>
-        </a>
+            </a>
 
-        <nav class="header-nav">
-            <a href="index.html" class="Top">トップ</a>
-            <a href="skinCare.html" class="skinCare">スキンケア</a>
-            <a href="makeUp.html" class="makeUp is-active"
-               aria-current="page">メイク</a>
-        </nav>
-    </header>
+            <nav class="header-nav">
+                <a href="index.html" class="Top">トップ</a>
+                <a href="skinCare.html" class="skinCare">スキンケア</a>
+                <a href="makeUp.html" class="makeUp is-active"
+                    aria-current="page">メイク</a>
+            </nav>
+        </header>
 
-    <main>
-        <!-- ページの導入 -->
-        <section class="makeUp-intro">
-            <div class="makeUp-intro-text">
-                <nav class="breadcrumb" aria-label="パンくずリスト">
-                    <a href="index.html">トップ</a>
-                    <span>/ メイク</span>
-                </nav>
+        <main>
+            <!-- ページの導入 -->
+            <section class="makeUp-intro">
+                <div class="makeUp-intro-text">
+                    <nav class="breadcrumb" aria-label="パンくずリスト">
+                        <a href="index.html">トップ</a>
+                        <span>/ メイク</span>
+                    </nav>
 
-                <p class="makeUp-label">MY MAKEUP</p>
-                <h1>自分らしい、仕上がりへ。</h1>
-                <p>ベースメイクの手順と、使っているアイテム。</p>
-            </div>
+                    <p class="makeUp-label">MY MAKEUP</p>
+                    <h1>自分らしい、仕上がりへ。</h1>
+                    <p>ベースメイクの手順と、使っているアイテム。</p>
+                </div>
 
-            <div class="makeUp-intro-photo">
-                <img src="images/エレガンスとアルビオンのベースメイク撮影.png"
-                     alt="エレガンスとアルビオンのベースメイク用品">
-            </div>
-        </section>
+                <div class="makeUp-intro-photo">
+                    <img src="images/エレガンスとアルビオンのベースメイク撮影.png"
+                        alt="エレガンスとアルビオンのベースメイク用品">
+                </div>
+            </section>
 
-        <section class="makeUp-content">
-            <!-- 表示切り替え -->
-            <div class="makeUp-tabs">
-                <button type="button"
+            <section class="makeUp-content">
+                <!-- 表示切り替え -->
+                <div class="makeUp-tabs">
+                    <button type="button"
                         id="routine-button"
                         class="is-active"
                         aria-controls="routine-panel"
                         aria-pressed="true">
                     ルーティン
-                </button>
+                    </button>
 
-                <button type="button"
+                    <button type="button"
                         id="items-button"
                         aria-controls="items-panel"
                         aria-pressed="false">
                     使用アイテム<span class="tab-count">5</span>
-                </button>
-            </div>
-
-            <!-- メイク手順 -->
-            <section id="routine-panel">
-                <div class="routine-heading">
-                    <div>
-                        <p class="routine-heading-label">MY ROUTINE</p>
-                        <h2>僕のメイク手順</h2>
-                    </div>
-                    <span class="step-total">5 STEPS</span>
+                    </button>
                 </div>
 
-                <div class="routine-steps">
-                    <article class="routine-step">
-                        <p class="routine-step-number">01</p>
-                        <h3>青髭をカバー</h3>
-                        <p>オレンジコンシーラーで、髭剃り後に残る青みをカバーする。</p>
+                <!-- メイク手順 -->
+                <section id="routine-panel">
+                    <div class="routine-heading">
+                        <div>
+                            <p class="routine-heading-label">MY ROUTINE</p>
+                            <h2>僕のメイク手順</h2>
+                        </div>
+                        <span class="step-total">5 STEPS</span>
+                    </div>
 
-                        <button type="button"
+                    <div class="routine-steps">
+                        <article class="routine-step">
+                            <p class="routine-step-number">01</p>
+                            <h3>青髭をカバー</h3>
+                            <p>オレンジコンシーラーで、髭剃り後に残る青みをカバーする。</p>
+
+                            <button type="button"
                                 class="routine-item-button"
                                 data-product="concealer">
                             COSCOSのコンシーラーの詳細
-                        </button>
-                    </article>
+                            </button>
+                        </article>
 
-                    <article class="routine-step">
-                        <p class="routine-step-number">02</p>
-                        <h3>下地</h3>
-                        <p>肌の凹凸や色ムラを補正し、ファンデーションを重ねる前の肌を整える。</p>
+                        <article class="routine-step">
+                            <p class="routine-step-number">02</p>
+                            <h3>下地</h3>
+                            <p>肌の凹凸や色ムラを補正し、ファンデーションを重ねる前の肌を整える。</p>
 
-                        <button type="button"
+                            <button type="button"
                                 class="routine-item-button"
                                 data-product="primer">
                             エレガンスの下地の詳細
-                        </button>
-                    </article>
+                            </button>
+                        </article>
 
-                    <article class="routine-step">
-                        <p class="routine-step-number">03</p>
-                        <h3>ファンデーション</h3>
-                        <p>肌の気になる部分をカバーし、うるおいのあるツヤ肌に仕上げる。</p>
+                        <article class="routine-step">
+                            <p class="routine-step-number">03</p>
+                            <h3>ファンデーション</h3>
+                            <p>肌の気になる部分をカバーし、うるおいのあるツヤ肌に仕上げる。</p>
 
-                        <button type="button"
+                            <button type="button"
                                 class="routine-item-button"
                                 data-product="foundation">
                             アルビオンのファンデーションの詳細
-                        </button>
-                    </article>
+                            </button>
+                        </article>
 
-                    <article class="routine-step">
-                        <p class="routine-step-number">04</p>
-                        <h3>キープミスト</h3>
-                        <p>汗や皮脂による化粧崩れを防ぐために、キープミストを使う。</p>
+                        <article class="routine-step">
+                            <p class="routine-step-number">04</p>
+                            <h3>キープミスト</h3>
+                            <p>汗や皮脂による化粧崩れを防ぐために、キープミストを使う。</p>
 
-                        <button type="button"
+                            <button type="button"
                                 class="routine-item-button"
                                 data-product="mist">
                             メイク キープ ミストの詳細
-                        </button>
-                    </article>
+                            </button>
+                        </article>
 
-                    <article class="routine-step">
-                        <p class="routine-step-number">05</p>
-                        <h3>パウダー</h3>
-                        <p>余分な皮脂を吸着するパウダーで、さらっとした肌に仕上げる。</p>
+                        <article class="routine-step">
+                            <p class="routine-step-number">05</p>
+                            <h3>パウダー</h3>
+                            <p>余分な皮脂を吸着するパウダーで、さらっとした肌に仕上げる。</p>
 
-                        <button type="button"
+                            <button type="button"
                                 class="routine-item-button"
                                 data-product="powder">
                             パーフェクトダイアリーのパウダーの詳細
-                        </button>
-                    </article>
-                </div>
-            </section>
-
-            <!-- 使用アイテム -->
-            <section id="items-panel" hidden>
-                <div class="routine-heading">
-                    <div>
-                        <p class="routine-heading-label">MY ITEMS</p>
-                        <h2>メイクに使うもの</h2>
+                            </button>
+                        </article>
                     </div>
-                    <span class="step-total">5 ITEMS</span>
-                </div>
+                </section>
 
-                <div class="item-cards">
-                    <!-- コンシーラー -->
-                    <article class="item-card">
-                        <div class="item-card-photo">
-                            <img src="images/image(20261013-043211).png"
-                                 alt="COSCOS パーフェクトマットコンシーラー スカーレットオレンジ">
+                <!-- 使用アイテム -->
+                <section id="items-panel" hidden>
+                    <div class="routine-heading">
+                        <div>
+                            <p class="routine-heading-label">MY ITEMS</p>
+                            <h2>メイクに使うもの</h2>
                         </div>
+                        <span class="step-total">5 ITEMS</span>
+                    </div>
 
-                        <div class="item-card-text">
-                            <p class="item-kind">オレンジコンシーラー</p>
-                            <h3>
+                    <div class="item-cards">
+                        <!-- コンシーラー -->
+                        <article class="item-card">
+                            <div class="item-card-photo">
+                                <img src="images/image(20261013-043211).png"
+                                    alt="COSCOS パーフェクトマットコンシーラー スカーレットオレンジ">
+                            </div>
+
+                            <div class="item-card-text">
+                                <p class="item-kind">オレンジコンシーラー</p>
+                                <h3>
                                 COSCOS<br>
                                 パーフェクトマットコンシーラー<br>
                                 スカーレットオレンジ
-                            </h3>
-                            <p>青髭の青みを隠すために使っています。</p>
+                                </h3>
+                                <p>青髭の青みを隠すために使っています。</p>
 
-                            <button type="button"
+                                <button type="button"
                                     class="item-detail-button"
                                     data-product="concealer"
                                     aria-label="COSCOSのコンシーラーの商品詳細を見る">
                                 商品詳細を見る
-                            </button>
-                        </div>
-                    </article>
+                                </button>
+                            </div>
+                        </article>
 
-                    <!-- 下地 -->
-                    <article class="item-card">
-                        <div class="item-card-photo">
-                            <img src="images/image(20261013-043250).png"
-                                 alt="エレガンス モデリング カラーベース UV">
-                        </div>
+                        <!-- 下地 -->
+                        <article class="item-card">
+                            <div class="item-card-photo">
+                                <img src="images/image(20261013-043250).png"
+                                    alt="エレガンス モデリング カラーベース UV">
+                            </div>
 
-                        <div class="item-card-text">
-                            <p class="item-kind">化粧下地</p>
-                            <h3>
+                            <div class="item-card-text">
+                                <p class="item-kind">化粧下地</p>
+                                <h3>
                                 エレガンス<br>
                                 モデリング カラーベース UV
-                            </h3>
-                            <p>肌色と質感を整える下地として使っています。</p>
+                                </h3>
+                                <p>肌色と質感を整える下地として使っています。</p>
 
-                            <button type="button"
+                                <button type="button"
                                     class="item-detail-button"
                                     data-product="primer"
                                     aria-label="エレガンスの下地の商品詳細を見る">
                                 商品詳細を見る
-                            </button>
-                        </div>
-                    </article>
+                                </button>
+                            </div>
+                        </article>
 
-                    <!-- ファンデーション -->
-                    <article class="item-card">
-                        <div class="item-card-photo">
-                            <img src="images/image(20261013-043324).png"
-                                 alt="アルビオン スタジオ ミルク ファンデーション">
-                        </div>
+                        <!-- ファンデーション -->
+                        <article class="item-card">
+                            <div class="item-card-photo">
+                                <img src="images/image(20261013-043324).png"
+                                    alt="アルビオン スタジオ ミルク ファンデーション">
+                            </div>
 
-                        <div class="item-card-text">
-                            <p class="item-kind">ファンデーション</p>
-                            <h3>
+                            <div class="item-card-text">
+                                <p class="item-kind">ファンデーション</p>
+                                <h3>
                                 アルビオン スタジオ<br>
                                 ミルク ファンデーション
-                            </h3>
-                            <p>肌をカバーし、ツヤのある仕上がりに整えます。</p>
+                                </h3>
+                                <p>肌をカバーし、ツヤのある仕上がりに整えます。</p>
 
-                            <button type="button"
+                                <button type="button"
                                     class="item-detail-button"
                                     data-product="foundation"
                                     aria-label="アルビオンのファンデーションの商品詳細を見る">
                                 商品詳細を見る
-                            </button>
-                        </div>
-                    </article>
+                                </button>
+                            </div>
+                        </article>
 
-                    <!-- キープミスト -->
-                    <article class="item-card">
-                        <div class="item-card-photo">
-                            <img src="images/image(20261013-043542).png"
-                                 alt="コーセー メイク キープ ミスト EX">
-                        </div>
+                        <!-- キープミスト -->
+                        <article class="item-card">
+                            <div class="item-card-photo">
+                                <img src="images/image(20261013-043542).png"
+                                    alt="コーセー メイク キープ ミスト EX">
+                            </div>
 
-                        <div class="item-card-text">
-                            <p class="item-kind">メイクキープミスト</p>
-                            <h3>
+                            <div class="item-card-text">
+                                <p class="item-kind">メイクキープミスト</p>
+                                <h3>
                                 コーセー<br>
                                 メイク キープ ミスト EX
-                            </h3>
-                            <p>メイクのヨレや崩れを防ぐために使っています。</p>
+                                </h3>
+                                <p>メイクのヨレや崩れを防ぐために使っています。</p>
 
-                            <button type="button"
+                                <button type="button"
                                     class="item-detail-button"
                                     data-product="mist"
                                     aria-label="メイク キープ ミストの商品詳細を見る">
                                 商品詳細を見る
-                            </button>
-                        </div>
-                    </article>
+                                </button>
+                            </div>
+                        </article>
 
-                    <!-- パウダー -->
-                    <article class="item-card">
-                        <div class="item-card-photo">
-                            <img src="images/download.png"
-                                 alt="パーフェクトダイアリー トランスルーシェント ブルーリング ルースパウダー 2.0">
-                        </div>
+                        <!-- パウダー -->
+                        <article class="item-card">
+                            <div class="item-card-photo">
+                                <img src="images/download.png"
+                                    alt="パーフェクトダイアリー トランスルーシェント ブルーリング ルースパウダー 2.0">
+                            </div>
 
-                        <div class="item-card-text">
-                            <p class="item-kind">フェイスパウダー</p>
-                            <h3>
+                            <div class="item-card-text">
+                                <p class="item-kind">フェイスパウダー</p>
+                                <h3>
                                 パーフェクトダイアリー<br>
                                 トランスルーシェント ブルーリング<br>
                                 ルースパウダー 2.0
-                            </h3>
-                            <p>テカリを抑え、さらっとした肌に仕上げます。</p>
+                                </h3>
+                                <p>テカリを抑え、さらっとした肌に仕上げます。</p>
 
-                            <button type="button"
+                                <button type="button"
                                     class="item-detail-button"
                                     data-product="powder"
                                     aria-label="パーフェクトダイアリーのパウダーの商品詳細を見る">
                                 商品詳細を見る
-                            </button>
-                        </div>
-                    </article>
-                </div>
+                                </button>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <!-- ページ下の移動リンク -->
+                <nav class="makeUp-bottom" aria-label="関連ページ">
+                    <a href="index.html">トップに戻る</a>
+                    <a href="skinCare.html">スキンケアも見る</a>
+                </nav>
             </section>
+        </main>
 
-            <!-- ページ下の移動リンク -->
-            <nav class="makeUp-bottom" aria-label="関連ページ">
-                <a href="index.html">トップに戻る</a>
-                <a href="skinCare.html">スキンケアも見る</a>
-            </nav>
-        </section>
-    </main>
-
-    <!-- 商品の詳細画面 -->
-    <dialog id="item-dialog"
+        <!-- 商品の詳細画面 -->
+        <dialog id="item-dialog"
             class="item-dialog"
             aria-labelledby="dialog-title">
 
-        <form method="dialog">
-            <button type="submit"
+            <form method="dialog">
+                <button type="submit"
                     class="dialog-close"
                     aria-label="商品詳細を閉じる">
                 ×
-            </button>
-        </form>
+                </button>
+            </form>
 
-        <div class="dialog-layout">
-            <div class="dialog-photo">
-                <img id="dialog-image"
-                     src="images/image(20261013-043211).png"
-                     alt="COSCOS パーフェクトマットコンシーラー スカーレットオレンジ">
+            <div class="dialog-layout">
+                <div class="dialog-photo">
+                    <img id="dialog-image"
+                        src="images/image(20261013-043211).png"
+                        alt="COSCOS パーフェクトマットコンシーラー スカーレットオレンジ">
 
-                <p id="dialog-no-image" hidden>写真準備中</p>
-            </div>
+                    <p id="dialog-no-image" hidden>写真準備中</p>
+                </div>
 
-            <div class="dialog-text">
-                <p id="dialog-kind" class="dialog-kind">
+                <div class="dialog-text">
+                    <p id="dialog-kind" class="dialog-kind">
                     オレンジコンシーラー
-                </p>
-                <h2 id="dialog-title">
+                    </p>
+                    <h2 id="dialog-title">
                     COSCOS パーフェクトマットコンシーラー スカーレットオレンジ
-                </h2>
-                <p id="dialog-description">
+                    </h2>
+                    <p id="dialog-description">
                     青髭を隠すために使っているオレンジコンシーラーです。
-                </p>
+                    </p>
+                </div>
             </div>
-        </div>
-    </dialog>
-
-    <script src="js/makeUp.js"></script>
-</body>
+        </dialog>
+        <script src="js/transition.js"></script>
+        <script src="js/makeUp.js"></script>
+    </body>
 </html>
