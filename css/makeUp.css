@@ -1,0 +1,321 @@
+/* 共通のカード・文字・詳細画面のCSSを読み込む。
+   同じcssフォルダーにあるskinCare.cssを使う。 */
+@import url("skinCare.css");
+
+/* hiddenが付いた要素は、ほかのdisplay指定より優先して隠す */
+[hidden] {
+    display: none !important;
+}
+
+/* お手本のメイクページの背景色 */
+main {
+    background: #fcf5ef;
+    min-height: calc(100vh - 80px);
+}
+
+/* 導入：左に文章、右に写真 */
+.makeUp-intro {
+    max-width: 1298px;
+    margin: 0 auto;
+    padding: 34px 44px 30px;
+    display: flex;
+    align-items: center;
+    gap: 38px;
+}
+
+.makeUp-intro-text {
+    flex: 1;
+    min-width: 0;
+    font-family: "Yu Gothic", Meiryo, sans-serif;
+}
+
+.makeUp-intro-text p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.8;
+    color: #626c74;
+}
+
+.makeUp-intro-text .makeUp-label {
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    color: #8d5842;
+}
+
+.makeUp-intro-text h1 {
+    margin: 10px 0;
+    font-family: "游明朝", "Yu Mincho", serif;
+    font-size: clamp(27px, 3vw, 40px);
+    font-weight: 500;
+    line-height: 1.5;
+    color: #303842;
+}
+
+.makeUp-intro-photo {
+    width: 250px;
+    height: 174px;
+    flex-shrink: 0;
+    border-radius: 90px 90px 6px 6px;
+    overflow: hidden;
+}
+
+.makeUp-intro-photo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.makeUp-content {
+    max-width: 1298px;
+    margin: 0 auto;
+    padding: 0 44px 40px;
+}
+
+/* タブ */
+.makeUp-tabs {
+    display: flex;
+    gap: 30px;
+    border-bottom: 1px solid #e3cbbc;
+    margin-bottom: 28px;
+}
+
+.makeUp-tabs button {
+    background: none;
+    border: none;
+    border-bottom: 3px solid transparent;
+    padding: 16px 6px;
+    min-height: 56px;
+    font-family: "Yu Gothic", Meiryo, sans-serif;
+    font-size: 16px;
+    color: #66727a;
+    cursor: pointer;
+}
+
+.makeUp-tabs button.is-active {
+    border-bottom-color: #8d5842;
+    color: #8d5842;
+    font-weight: 700;
+}
+
+/* 使用アイテムの横にある件数 */
+.tab-count {
+    display: inline-block;
+    margin-left: 8px;
+    padding: 0 7px;
+    border: 1px solid #e3cbbc;
+    border-radius: 20px;
+    background: #fff;
+    font-size: 12px;
+}
+
+/* 共通CSSの青色を、このページでは茶色に変える。
+   カンマで区切ると、複数の場所に同じ指定を付けられる。 */
+.breadcrumb,
+.routine-heading-label,
+.routine-step .routine-step-number,
+.routine-item-button,
+.item-card-text .item-kind,
+.item-detail-button,
+.dialog-kind {
+    color: #8d5842;
+}
+
+.routine-step,
+.item-card {
+    border-color: #e3cbbc;
+}
+
+/* 左に見出し、右に件数 */
+.routine-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+
+.routine-heading h2 {
+    color: #303842;
+}
+
+.step-total {
+    flex-shrink: 0;
+    font-family: "Yu Gothic", Meiryo, sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    color: #8d5842;
+}
+
+.routine-step .routine-step-number {
+    font-family: Georgia, serif;
+    line-height: 1;
+}
+
+.routine-step h3 {
+    color: #303842;
+}
+
+.item-card-text .item-kind {
+    letter-spacing: 0.17em;
+}
+
+/* 商品カードの詳細ボタンを下にそろえる */
+.item-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.item-card-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.item-detail-button {
+    margin-top: auto;
+    padding-top: 14px;
+    align-self: flex-start;
+}
+
+/* 商品写真が未追加のときの枠 */
+.item-card-placeholder,
+.dialog-photo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f6e8dc;
+    color: #8d5842;
+}
+
+.item-card-placeholder,
+#dialog-no-image {
+    font-family: "Yu Gothic", Meiryo, sans-serif;
+    font-size: 14px;
+}
+
+/* 詳細画面の写真を枠いっぱいに配置する */
+.dialog-photo {
+    position: relative;
+    min-height: 440px;
+}
+
+.dialog-photo img {
+    position: absolute;
+    inset: 0;
+    min-height: 0;
+}
+
+/* 仮の内容についての注記 */
+.makeUp-note {
+    margin: 20px 0 0;
+    font-family: "Yu Gothic", Meiryo, sans-serif;
+    font-size: 13px;
+    line-height: 1.8;
+    color: #68727b;
+}
+
+/* ページ下の移動リンク */
+.makeUp-bottom {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 28px;
+    padding: 24px 0 0;
+    border-top: 1px solid #e3cbbc;
+}
+
+.makeUp-bottom a {
+    padding: 8px 0;
+    font-family: "Yu Gothic", Meiryo, sans-serif;
+    font-size: 14px;
+    color: #8d5842;
+    text-decoration: none;
+}
+
+.makeUp-bottom a:hover {
+    text-decoration: underline;
+}
+
+/* キーボード操作で選んでいる場所を見えるようにする */
+button:focus-visible,
+a:focus-visible {
+    outline: 2px solid #8d5842;
+    outline-offset: 4px;
+}
+
+.item-detail-button:focus-visible::after {
+    outline: 2px solid #8d5842;
+    outline-offset: -4px;
+    border-radius: 8px;
+}
+
+/* 画面幅650px以下のときの設定。
+   カードの幅300pxと横スクロールはそのまま。 */
+@media (max-width: 650px) {
+    body header {
+        height: auto;
+        min-height: 80px;
+        padding: 14px 20px;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    header .header-nav {
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .makeUp-intro {
+        padding: 26px 20px 20px;
+        gap: 12px;
+    }
+
+    .makeUp-intro-photo {
+        width: 88px;
+        height: 130px;
+        border-radius: 48px 48px 4px 4px;
+    }
+
+    .makeUp-intro-text h1 {
+        font-size: 25px;
+        line-height: 1.55;
+    }
+
+    .makeUp-intro-text p {
+        font-size: 14px;
+    }
+
+    .makeUp-intro-text .makeUp-label {
+        font-size: 12px;
+    }
+
+    .makeUp-content {
+        padding: 0 20px 30px;
+    }
+
+    .makeUp-tabs {
+        gap: 22px;
+    }
+
+    .routine-heading h2 {
+        font-size: 21px;
+    }
+
+    /* 詳細画面は、写真の下に文章を配置する */
+    .dialog-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .dialog-photo {
+        height: 220px;
+        min-height: 0;
+    }
+
+    .dialog-text {
+        padding: 28px 24px;
+    }
+
+    .dialog-text h2 {
+        font-size: 25px;
+    }
+}

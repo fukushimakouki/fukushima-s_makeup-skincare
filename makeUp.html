@@ -1,28 +1,280 @@
 <!DOCTYPE html>
 <html lang="ja">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="css/style.css">
-        <title>ふっくーのメイク・スキンケア</title>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/makeUp.css">
+    <link rel="stylesheet" href="css/header.css">
+    <title>ふっくーのメイク</title>
+</head>
 
-    <body>
-        <!-- ヘッダー -->
-        <header>
-            <a href="index.html" class="site-logo">
-                <img src="images/icon/sakura-mark.svg" alt="ふっくーのメイク・スキンケア" class="site-icon">
-                <span class="site-text">
-                    <span class="site-logo__title">Fukku Beauty.</span>
-                    <span class="site-logo__subtitle">MY SKINCARE &amp; MAKEUP</span>
+<body>
+    <!-- ヘッダー -->
+    <header>
+        <a href="index.html" class="site-logo">
+            <img src="images/icon/sakura-mark.svg"
+                 alt="ふっくーのメイク・スキンケア"
+                 class="site-icon">
+
+            <span class="site-text">
+                <span class="site-logo__title">Fukku Beauty.</span>
+                <span class="site-logo__subtitle">
+                    MY SKINCARE &amp; MAKEUP
                 </span>
-            </a>
+            </span>
+        </a>
 
-            <nav class="header-nav">
-                <a href="index.html" class="Top">トップ</a>
-                <a href="skinCare.html" class="skinCare">スキンケア</a>
-                <a href="makeUp.html" class="makeUp is-active" aria-current="page">メイク</a>
+        <nav class="header-nav">
+            <a href="index.html" class="Top">トップ</a>
+            <a href="skinCare.html" class="skinCare">スキンケア</a>
+            <a href="makeUp.html" class="makeUp is-active"
+               aria-current="page">メイク</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- ページの導入 -->
+        <section class="makeUp-intro">
+            <div class="makeUp-intro-text">
+                <nav class="breadcrumb" aria-label="パンくずリスト">
+                    <a href="index.html">トップ</a>
+                    <span>/ メイク</span>
+                </nav>
+
+                <p class="makeUp-label">MY MAKEUP</p>
+                <h1>自分らしい、仕上がりへ。</h1>
+                <p>ベースから目元まで。僕なりのメイクを、ひとつずつ。</p>
+            </div>
+
+            <div class="makeUp-intro-photo">
+                <img src="images/エレガンスとアルビオンのベースメイク撮影.png"
+                     alt="エレガンスとアルビオンのベースメイク用品">
+            </div>
+        </section>
+
+        <section class="makeUp-content">
+            <!-- 表示切り替え -->
+            <div class="makeUp-tabs">
+                <button type="button"
+                        id="routine-button"
+                        class="is-active"
+                        aria-controls="routine-panel"
+                        aria-pressed="true">
+                    ルーティン
+                </button>
+
+                <button type="button"
+                        id="items-button"
+                        aria-controls="items-panel"
+                        aria-pressed="false">
+                    使用アイテム<span class="tab-count">4</span>
+                </button>
+            </div>
+
+            <!-- ルーティン：手順は仮の構成 -->
+            <section id="routine-panel">
+                <div class="routine-heading">
+                    <div>
+                        <p class="routine-heading-label">MY ROUTINE</p>
+                        <h2>僕のメイク手順</h2>
+                    </div>
+
+                    <span class="step-total">4 STEPS</span>
+                </div>
+
+                <div class="routine-steps">
+                    <article class="routine-step">
+                        <p class="routine-step-number">01</p>
+                        <h3>下地</h3>
+                        <p>下地を肌になじませて、ベースを整える。</p>
+
+                        <button type="button"
+                                class="routine-item-button"
+                                data-product="primer">
+                            エレガンスの下地の詳細
+                        </button>
+                    </article>
+
+                    <article class="routine-step">
+                        <p class="routine-step-number">02</p>
+                        <h3>ファンデーション</h3>
+                        <p>少しずつ重ねて、好みの仕上がりに。</p>
+
+                        <button type="button"
+                                class="routine-item-button"
+                                data-product="foundation">
+                            アルビオンのファンデーションの詳細
+                        </button>
+                    </article>
+
+                    <article class="routine-step">
+                        <p class="routine-step-number">03</p>
+                        <h3>アイメイク</h3>
+                        <p>色を選んで、目元の印象をつくる。</p>
+
+                        <button type="button"
+                                class="routine-item-button"
+                                data-product="eyemakeup">
+                            アイメイク用品の詳細
+                        </button>
+                    </article>
+
+                    <article class="routine-step">
+                        <p class="routine-step-number">04</p>
+                        <h3>仕上げ</h3>
+                        <p>全体を見ながら、仕上がりを整える。</p>
+
+                        <button type="button"
+                                class="routine-item-button"
+                                data-product="finish">
+                            仕上げ用品の詳細
+                        </button>
+                    </article>
+                </div>
+
+                <p class="makeUp-note">
+                    ※ 手順は仮の構成です。アイメイク・仕上げの使用アイテムは紹介を準備中です。
+                </p>
+            </section>
+
+            <!-- 使用アイテム：最初は非表示 -->
+            <section id="items-panel" hidden>
+                <div class="routine-heading">
+                    <div>
+                        <p class="routine-heading-label">MY ITEMS</p>
+                        <h2>メイクに使うもの</h2>
+                    </div>
+
+                    <span class="step-total">4 ITEMS</span>
+                </div>
+
+                <div class="item-cards">
+                    <!-- 下地 -->
+                    <article class="item-card">
+                        <div class="item-card-photo">
+                            <img src="images/エレガンスとアルビオンのベースメイク撮影.png"
+                                 alt="エレガンスの下地とアルビオンのファンデーション">
+                        </div>
+
+                        <div class="item-card-text">
+                            <p class="item-kind">化粧下地</p>
+                            <h3>エレガンス<br>モデリング カラーベース UV</h3>
+                            <p>ベースメイクに使う下地。</p>
+
+                            <button type="button"
+                                    class="item-detail-button"
+                                    data-product="primer"
+                                    aria-label="エレガンスの下地の商品詳細を見る">
+                                商品詳細を見る
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- ファンデーション -->
+                    <article class="item-card">
+                        <div class="item-card-photo">
+                            <img src="images/エレガンスとアルビオンのベースメイク撮影.png"
+                                 alt="アルビオンのファンデーションとエレガンスの下地">
+                        </div>
+
+                        <div class="item-card-text">
+                            <p class="item-kind">ファンデーション</p>
+                            <h3>アルビオン スタジオ<br>ミルク ファンデーション</h3>
+                            <p>下地の後に使うファンデーション。</p>
+
+                            <button type="button"
+                                    class="item-detail-button"
+                                    data-product="foundation"
+                                    aria-label="アルビオンのファンデーションの商品詳細を見る">
+                                商品詳細を見る
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- アイメイク：商品と写真は後から追加 -->
+                    <article class="item-card">
+                        <div class="item-card-photo item-card-placeholder">
+                            <span>写真準備中</span>
+                        </div>
+
+                        <div class="item-card-text">
+                            <p class="item-kind">アイメイク</p>
+                            <h3>アイメイク用品</h3>
+                            <p>使用している商品の紹介を準備中です。</p>
+
+                            <button type="button"
+                                    class="item-detail-button"
+                                    data-product="eyemakeup"
+                                    aria-label="アイメイク用品の商品詳細を見る">
+                                商品詳細を見る
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- 仕上げ：商品と写真は後から追加 -->
+                    <article class="item-card">
+                        <div class="item-card-photo item-card-placeholder">
+                            <span>写真準備中</span>
+                        </div>
+
+                        <div class="item-card-text">
+                            <p class="item-kind">仕上げ</p>
+                            <h3>仕上げ用品</h3>
+                            <p>使用している商品の紹介を準備中です。</p>
+
+                            <button type="button"
+                                    class="item-detail-button"
+                                    data-product="finish"
+                                    aria-label="仕上げ用品の商品詳細を見る">
+                                商品詳細を見る
+                            </button>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- ページ下の移動リンク -->
+            <nav class="makeUp-bottom" aria-label="関連ページ">
+                <a href="index.html">トップに戻る</a>
+                <a href="skinCare.html">スキンケアも見る</a>
             </nav>
-        </header>
-    </body>
+        </section>
+    </main>
+
+    <!-- 商品の詳細画面 -->
+    <dialog id="item-dialog"
+            class="item-dialog"
+            aria-labelledby="dialog-title">
+
+        <form method="dialog">
+            <button type="submit"
+                    class="dialog-close"
+                    aria-label="商品詳細を閉じる">
+                ×
+            </button>
+        </form>
+
+        <div class="dialog-layout">
+            <div class="dialog-photo">
+                <img id="dialog-image"
+                     src="images/エレガンスとアルビオンのベースメイク撮影.png"
+                     alt="エレガンスとアルビオンのベースメイク用品">
+
+                <p id="dialog-no-image" hidden>写真準備中</p>
+            </div>
+
+            <div class="dialog-text">
+                <p id="dialog-kind" class="dialog-kind">化粧下地</p>
+                <h2 id="dialog-title">
+                    エレガンス モデリング カラーベース UV
+                </h2>
+                <p id="dialog-description">
+                    ベースメイクに使う下地です。
+                </p>
+            </div>
+        </div>
+    </dialog>
+
+    <script src="js/makeUp.js"></script>
+</body>
 </html>
