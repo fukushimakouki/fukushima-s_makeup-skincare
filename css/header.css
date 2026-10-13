@@ -94,3 +94,17 @@ header {
     max-width: none;
     margin: 0;
 }
+
+/* 全ページのスクロールバーを非表示にする */
+html {
+    scrollbar-width: none; /* Firefox */
+}
+
+body {
+    -ms-overflow-style: none; /* 旧Edge / IE */
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+    display: none; /* Chrome / Edge / Safari */
+}
