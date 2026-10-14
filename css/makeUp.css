@@ -98,17 +98,6 @@ main {
     font-weight: 700;
 }
 
-/* 使用アイテムの横にある件数 */
-.tab-count {
-    display: inline-block;
-    margin-left: 8px;
-    padding: 0 7px;
-    border: 1px solid #e3cbbc;
-    border-radius: 20px;
-    background: #fff;
-    font-size: 12px;
-}
-
 /* 共通CSSの青色を、このページでは茶色に変える。
    カンマで区切ると、複数の場所に同じ指定を付けられる。 */
 .breadcrumb,
