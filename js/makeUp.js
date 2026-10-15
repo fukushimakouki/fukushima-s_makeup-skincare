@@ -179,7 +179,6 @@ const products = {
         // もともと掲載されていた本人の感想をそのまま残す。
         review:
             "カバー力が高く、少量でもよく伸びます。しっとりとした保湿感もあり、使い始めてから肌荒れが減ったように感じています。",
-        reviewNote: "",
 
         // 参考価格はアルビオン公式の商品ページで確認。
         price: "7,150円（税込）／30mL",
@@ -261,7 +260,6 @@ const dialogDescription = document.getElementById(
 
 // 全商品で共通の、感想・参考価格・参考サイトの表示場所。
 const dialogReview = document.getElementById("dialog-review");
-const dialogReviewNote = document.getElementById("dialog-review-note");
 const dialogPrice = document.getElementById("dialog-price");
 const dialogPriceNote = document.getElementById("dialog-price-note");
 const dialogSource = document.getElementById("dialog-source");
@@ -372,9 +370,6 @@ document
             --------------------------------------------- */
             // 押した商品に合わせて感想・価格・参考サイトを書き換える。
             dialogReview.textContent = product.review;
-            dialogReviewNote.textContent = product.reviewNote ??
-                "複数サイトのレビューを参考にまとめています。";
-            dialogReviewNote.hidden = !dialogReviewNote.textContent;
             dialogPrice.textContent = product.price;
             dialogPriceNote.textContent = `${product.priceNote}2026年10月15日確認。価格は販売店や時期によって異なります。`;
             dialogSource.href = product.sourceUrl;
