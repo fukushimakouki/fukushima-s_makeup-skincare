@@ -183,6 +183,13 @@ main {
 }
 
 /* 詳細画面の写真を枠いっぱいに配置する */
+.item-dialog {
+    --dialog-accent: #8d5842;
+    --dialog-border: #e3cbbc;
+    --dialog-surface: #fcf5ef;
+    --dialog-hover: #efddce;
+}
+
 .dialog-photo {
     position: relative;
     min-height: 440px;
@@ -336,4 +343,5 @@ a:focus-visible {
         transform: translateY(0);
     }
 }
+
 }

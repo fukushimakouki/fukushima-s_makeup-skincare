@@ -77,6 +77,8 @@ routineButton.addEventListener("click", () => {
 // description → 詳細画面に表示する説明文
 //
 // 説明文を変えたいときは、description の文字を変更する。
+// review は複数サイトの口コミを要約した文章。参照先は各商品のコメントに記載。
+// price・sourceUrl は2026年10月15日に確認した参考価格と、画面に表示する参考サイト。
 
 const products = {
 
@@ -85,15 +87,29 @@ const products = {
         name: "ビオレ パーフェクトオイル",
         kind: "クレンジングオイル",
         image: "images/水面に横たうビオレ パーフェクトオイル-1.png",
-        description: "メイク落としや皮脂を落とすために使っています。"
+        description: "メイク落としや皮脂を落とすために使っています。",
+        // レビュー: https://www.cosme.net/variations/541903/review/msf-1/
+        // レビュー: https://review.kakaku.com/review/K0000491565/
+        review: "メイクになじませやすく、すっきり洗い流せるという感想が見られます。濡れた手で使える手軽さも好評ですが、洗浄後に乾燥を感じる人もいるようです。",
+        price: "1,355円（税込）／230mL",
+        priceNote: "@cosme SHOPPING掲載価格。",
+        sourceUrl: "https://www.cosme.com/products/detail.php?product_id=37745",
+        sourceName: "@cosme SHOPPING"
     },
 
     // HTMLの data-product="facewash" に対応。
     facewash: {
-        name: "ビオレ ザフェイス",
+        name: "ビオレ ザフェイス 泡洗顔料 スムースクリア",
         kind: "洗顔料",
         image: "images/淡い水面に浮かぶビオレ ザ フェイス.png",
-        description: "朝と夜の洗顔に使っています。"
+        description: "朝と夜の洗顔に使っています。",
+        // レビュー: https://www.cosme.net/products/10235225/
+        // レビュー・価格: https://www.yodobashi.com/community/product/100000001007734363/review.html
+        review: "弾力のある泡でやさしく洗えて、洗い上がりがさっぱりするという感想が見られます。泡立てる手間がなく、忙しい朝にも使いやすい点が好評です。",
+        price: "786円（税込）／200mL",
+        priceNote: "ヨドバシ.com掲載価格。",
+        sourceUrl: "https://www.yodobashi.com/community/product/100000001007734363/review.html",
+        sourceName: "ヨドバシ.com"
     },
 
     // HTMLの data-product="toner" に対応。
@@ -101,7 +117,14 @@ const products = {
         name: "アヌア PDRNヒアルロン酸 ハイドレイティングミスト",
         kind: "化粧水",
         image: "images/水面に立つターコイズミスト-2.png",
-        description: "朝と夜の保湿に使っています。洗顔後の肌に化粧水をなじませます。"
+        description: "朝と夜の保湿に使っています。洗顔後の肌に化粧水をなじませます。",
+        // レビュー・価格: https://www.cosme.net/products/10284288/
+        // レビュー: https://shopping.yahoo.co.jp/products/z803tj3p8j
+        review: "細かなミストが顔全体に広がり、軽いつけ心地でもしっとりするという感想が見られます。ベタつきにくく、日中の乾燥が気になるときにも使いやすいようです。",
+        price: "2,380円（税込）／100mL",
+        priceNote: "@cosme掲載価格。",
+        sourceUrl: "https://www.cosme.net/products/10284288/",
+        sourceName: "@cosme"
     },
 
     // HTMLの data-product="serum" に対応。
@@ -109,7 +132,14 @@ const products = {
         name: "アヌア PDRNヒアルロン酸カプセル100セラム 30ml",
         kind: "美容液",
         image: "images/水面に佇むターコイズ美容液-4.png",
-        description: "夜の保湿とニキビ対策に使っています。化粧水の後に美容液をなじませます。"
+        description: "夜の保湿とニキビ対策に使っています。化粧水の後に美容液をなじませます。",
+        // レビュー: https://www.cosme.net/variations/1191661/review/msf-1/
+        // レビュー・価格: https://anuashop.jp/products/side0011
+        review: "さらっとなじむのに、肌がもちっとしっとりするという感想が見られます。ベタつきにくくメイク前にも使いやすい一方、保湿感には個人差があるようです。",
+        price: "3,450円（税込）／30mL",
+        priceNote: "Anua公式の通常価格（セール価格を除く）。",
+        sourceUrl: "https://anuashop.jp/products/side0011",
+        sourceName: "Anua公式オンラインショップ"
     },
 
     // HTMLの data-product="milk" に対応。
@@ -117,7 +147,14 @@ const products = {
         name: "アクアレーベル トリートメントミルク ブライトニング",
         kind: "乳液",
         image: "images/水面に佇む青いアクアレーベル-5.png",
-        description: "夜の保湿に使っています。化粧水と美容液の後に乳液をなじませます。"
+        description: "夜の保湿に使っています。化粧水と美容液の後に乳液をなじませます。",
+        // レビュー: https://www.cosme.net/products/10250518/review/agg-35/agl-39/rf-1/
+        // レビュー: https://review.rakuten.co.jp/review/item/1/261122_11254107/1.1/
+        review: "なめらかに広がり、しっとりするのにベタつきにくいという感想が見られます。重すぎない使い心地や続けやすい価格が、毎日の保湿ケア用として好評です。",
+        price: "1,650円（税込）／130mL",
+        priceNote: "資生堂公式の参考小売価格。感想は「しっとり」タイプを参照。",
+        sourceUrl: "https://www.shiseido.co.jp/aqua/stepcare/white/",
+        sourceName: "資生堂 アクアレーベル公式サイト"
     }
 };
 
@@ -140,6 +177,12 @@ const dialogTitle = document.getElementById("dialog-title");
 
 // 商品の説明文を表示する部分を取得する。
 const dialogDescription = document.getElementById("dialog-description");
+
+// ファンデーションと同じ、感想・参考価格・参考サイトの欄。
+const dialogReview = document.getElementById("dialog-review");
+const dialogPrice = document.getElementById("dialog-price");
+const dialogPriceNote = document.getElementById("dialog-price-note");
+const dialogSource = document.getElementById("dialog-source");
 
 /* =========================================================
    6. 商品一覧とルーティンの詳細ボタンに処理を付ける
@@ -196,6 +239,16 @@ document.querySelectorAll("button[data-product]").forEach((button) => {
 
         // 商品の説明文を変更する。
         dialogDescription.textContent = product.description;
+
+        dialogReview.textContent = product.review;
+        dialogPrice.textContent = product.price;
+        dialogPriceNote.textContent = `${product.priceNote}2026年10月15日確認。価格は販売店や時期によって異なります。`;
+        dialogSource.href = product.sourceUrl;
+        dialogSource.textContent = `参考サイト：${product.sourceName} ↗`;
+        dialogSource.setAttribute("aria-label", `${product.name}の参考サイト：${product.sourceName}（新しいタブで開きます）`);
+
+        // 前に開いた商品のスクロール位置を先頭に戻す。
+        itemDialog.scrollTop = 0;
 
         // showModal() は、dialogをページの手前に開く命令。
         // 写真と文章を変更してから、詳細画面を開く。

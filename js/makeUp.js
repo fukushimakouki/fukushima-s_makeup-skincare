@@ -110,6 +110,10 @@ routineButton.addEventListener("click", () => {
 
     description
         詳細画面に表示する説明
+
+    review / price / sourceUrl
+        複数サイトの口コミの要約、参考価格、画面に表示する参考サイト。
+        参照先は各商品のコメントに記載。価格は2026年10月15日確認。
 */
 
 const products = {
@@ -125,7 +129,14 @@ const products = {
         image: "images/image(20261013-043211).png",
 
         description:
-            "青髭の青みを目立ちにくくするために使っているオレンジコンシーラーです。髭剃り後に気になる部分へ少量ずつのせ、肌になじませてから下地を重ねています。"
+            "青髭の青みを目立ちにくくするために使っているオレンジコンシーラーです。髭剃り後に気になる部分へ少量ずつのせ、肌になじませてから下地を重ねています。",
+        // レビュー: https://www.cosme.net/variations/990026/review/sk-2/
+        // レビュー: https://www.cosmebi.jp/products/detail/10017969
+        review: "青みをオレンジで補正し、血色よく見せられるという感想が見られます。肌への密着感も好評で、上からファンデーションを重ねてもなじみやすいようです。",
+        price: "1,760円（税込）／2g",
+        priceNote: "リベルタ公式オンラインストア掲載価格。",
+        sourceUrl: "https://liberta-online.jp/products/02213102",
+        sourceName: "リベルタ公式オンラインストア"
     },
 
 
@@ -140,7 +151,15 @@ const products = {
         image: "images/image(20261013-043250).png",
 
         description:
-            "ファンデーションを塗る前に使っている化粧下地です。肌の色ムラや質感を整え、ベースメイクをきれいに仕上げるために使っています。"
+            "ファンデーションを塗る前に使っている化粧下地です。肌の色ムラや質感を整え、ベースメイクをきれいに仕上げるために使っています。",
+        // レビュー: https://www.cosme.net/reviews/516415767/
+        // レビュー: https://i-voce.jp/cosmetics/10/110983/235695/
+        // 価格: https://color-navi.elegance-cosmetics.com/
+        review: "色ムラを自然に整え、なめらかな肌に見せられるという感想が見られます。薄く仕上がる点が好評ですが、肌質によっては乾燥を感じることもあるようです。",
+        price: "5,500円（税込）／30g",
+        priceNote: "エレガンス公式掲載価格。",
+        sourceUrl: "https://color-navi.elegance-cosmetics.com/",
+        sourceName: "エレガンス公式サイト"
     },
 
 
@@ -155,7 +174,19 @@ const products = {
         image: "images/image(20261013-043324).png",
 
         description:
-            "肌の気になる部分をカバーしながら、自然なツヤのある仕上がりにするために使っています。下地の後に顔全体へ薄くなじませています。"
+            "肌の気になる部分をカバーしながら、自然なツヤのある仕上がりにするために使っています。下地の後に顔全体へ薄くなじませています。",
+
+        // もともと掲載されていた本人の感想をそのまま残す。
+        review:
+            "カバー力が高く、少量でもよく伸びます。しっとりとした保湿感もあり、使い始めてから肌荒れが減ったように感じています。",
+        reviewNote: "",
+
+        // 参考価格はアルビオン公式の商品ページで確認。
+        price: "7,150円（税込）／30mL",
+        priceNote: "アルビオン公式掲載価格。",
+
+        sourceUrl: "https://albion.co.jp/site/g/gAAAKFK010/",
+        sourceName: "アルビオン公式オンラインストア"
     },
 
 
@@ -170,7 +201,14 @@ const products = {
         image: "images/image(20261013-043542).png",
 
         description:
-            "完成したメイクを長時間キープするために使っています。汗や皮脂による化粧崩れを抑えるため、ベースメイクの仕上げに顔全体へ吹きかけています。"
+            "完成したメイクを長時間キープするために使っています。汗や皮脂による化粧崩れを抑えるため、ベースメイクの仕上げに顔全体へ吹きかけています。",
+        // レビュー: https://www.cosme.net/variations/1084854/
+        // レビュー・価格: https://i-voce.jp/cosmetics/14/92072/reviews/
+        review: "細かなミストがふんわり広がり、メイクの崩れやマスクへの色移りを抑えやすいという感想が見られます。一方で、肌質や季節によって乾燥を感じる人もいるようです。",
+        price: "1,320円（税込）／85mL",
+        priceNote: "VOCE掲載の旧製品EXの参考価格。現在は生産終了・リニューアルしています。",
+        sourceUrl: "https://i-voce.jp/cosmetics/14/92072/reviews/",
+        sourceName: "VOCE"
     },
 
 
@@ -185,7 +223,14 @@ const products = {
         image: "images/download.png",
 
         description:
-            "ベースメイクの仕上げに使っているフェイスパウダーです。余分な皮脂やテカリを抑え、さらっとした肌に整えるために使っています。"
+            "ベースメイクの仕上げに使っているフェイスパウダーです。余分な皮脂やテカリを抑え、さらっとした肌に整えるために使っています。",
+        // レビュー: https://www.cosme.net/products/10239799/
+        // レビュー・価格: https://jp.perfectdiary.com/products/translucent-blurring-loose-powder-version-n
+        review: "きめ細かな粉でさらっと仕上がり、時間がたっても崩れにくいという感想が見られます。軽いつけ心地や、厚塗り感が出にくい自然な仕上がりも好評です。",
+        price: "3,960円（税込）",
+        priceNote: "Perfect Diary公式の2.0掲載価格。",
+        sourceUrl: "https://jp.perfectdiary.com/products/translucent-blurring-loose-powder-version-n",
+        sourceName: "Perfect Diary公式オンラインストア"
     }
 };
 
@@ -213,6 +258,13 @@ const dialogTitle = document.getElementById("dialog-title");
 const dialogDescription = document.getElementById(
     "dialog-description"
 );
+
+// 全商品で共通の、感想・参考価格・参考サイトの表示場所。
+const dialogReview = document.getElementById("dialog-review");
+const dialogReviewNote = document.getElementById("dialog-review-note");
+const dialogPrice = document.getElementById("dialog-price");
+const dialogPriceNote = document.getElementById("dialog-price-note");
+const dialogSource = document.getElementById("dialog-source");
 
 
 /* =========================================================
@@ -318,7 +370,19 @@ document
             /* ---------------------------------------------
                商品詳細画面を開く
             --------------------------------------------- */
+            // 押した商品に合わせて感想・価格・参考サイトを書き換える。
+            dialogReview.textContent = product.review;
+            dialogReviewNote.textContent = product.reviewNote ??
+                "複数サイトのレビューを参考にまとめています。";
+            dialogReviewNote.hidden = !dialogReviewNote.textContent;
+            dialogPrice.textContent = product.price;
+            dialogPriceNote.textContent = `${product.priceNote}2026年10月15日確認。価格は販売店や時期によって異なります。`;
+            dialogSource.href = product.sourceUrl;
+            dialogSource.textContent = `参考サイト：${product.sourceName} ↗`;
+            dialogSource.setAttribute("aria-label", `${product.name}の参考サイト：${product.sourceName}（新しいタブで開きます）`);
 
+            // 前に開いた商品のスクロール位置を先頭に戻す。
+            itemDialog.scrollTop = 0;
             itemDialog.showModal();
 
 

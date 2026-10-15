@@ -2,6 +2,11 @@
     box-sizing: border-box; /* 幅にpaddingと枠線を含める */
 }
 
+/* タブや注記を確実に非表示にする。 */
+[hidden] {
+    display: none !important;
+}
+
 body {
     margin: 0; /* ブラウザ標準の外側の余白を消す */
 }
@@ -249,6 +254,10 @@ main {
 
 /* 商品の詳細画面 */
 .item-dialog {
+    --dialog-accent: #276888;
+    --dialog-border: #c7dfe9;
+    --dialog-surface: #f4fafc;
+    --dialog-hover: #e1f0f6;
     width: min(760px, calc(100% - 36px));
     max-height: 90vh;
     padding: 0;
@@ -281,6 +290,7 @@ main {
 }
 
 .dialog-text {
+    min-width: 0;
     padding: 50px 37px;
     display: flex;
     flex-direction: column;
@@ -309,9 +319,110 @@ main {
     color: #68727b;
 }
 
+/* 両ページ共通の、感想・参考価格・参考サイト。 */
+.dialog-extra {
+    margin-top: 24px;
+}
+
+.dialog-extra h3 {
+    margin: 0 0 8px;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--dialog-accent);
+}
+
+#dialog-review {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.9;
+    color: #68727b;
+}
+
+.dialog-review-note,
+.dialog-price-note {
+    margin: 8px 0 0;
+    font-size: 12px;
+    line-height: 1.7;
+    color: #68727b;
+}
+
+.dialog-purchase {
+    margin-top: 24px;
+    padding-top: 20px;
+    border-top: 1px solid var(--dialog-border);
+}
+
+#dialog-price {
+    margin: 0;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.7;
+    color: #303842;
+}
+
+.dialog-source {
+    display: inline-block;
+    margin-top: 16px;
+    padding: 12px 16px;
+    border: 1px solid var(--dialog-border);
+    border-radius: 6px;
+    background: var(--dialog-surface);
+    color: var(--dialog-accent);
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+    text-decoration: none;
+    transition: background-color 0.2s;
+}
+
+.dialog-source:hover {
+    background: var(--dialog-hover);
+}
+
+.dialog-source:focus-visible,
+.dialog-close:focus-visible {
+    outline: 2px solid var(--dialog-accent);
+    outline-offset: 4px;
+}
+
+/* 文章が増えても写真を引き伸ばさず、商品の全体を表示する。 */
+.dialog-photo {
+    position: relative;
+    min-height: 440px;
+    background: var(--dialog-surface);
+}
+
+.dialog-photo img {
+    position: absolute;
+    inset: 0;
+    min-height: 0;
+    object-fit: contain;
+}
+
+@media (max-width: 650px) {
+    .dialog-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .dialog-photo {
+        height: 220px;
+        min-height: 0;
+    }
+
+    .dialog-text {
+        padding: 28px 24px;
+    }
+
+    .dialog-text h2 {
+        font-size: 25px;
+    }
+}
+
 /* 右上の閉じるボタン */
 .dialog-close {
     position: absolute;
+    z-index: 1;
     top: 14px;
     right: 14px;
     width: 44px;
