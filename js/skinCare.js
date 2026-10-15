@@ -244,8 +244,8 @@ document.querySelectorAll("button[data-product]").forEach((button) => {
         dialogPrice.textContent = product.price;
         dialogPriceNote.textContent = `${product.priceNote}2026年10月15日確認。価格は販売店や時期によって異なります。`;
         dialogSource.href = product.sourceUrl;
-        dialogSource.textContent = `参考サイト：${product.sourceName} ↗`;
-        dialogSource.setAttribute("aria-label", `${product.name}の参考サイト：${product.sourceName}（新しいタブで開きます）`);
+        dialogSource.textContent = "参考サイトを見る";
+        dialogSource.setAttribute("aria-label", `${product.name}の参考サイトを見る（${product.sourceName}、新しいタブで開きます）`);
 
         // 前に開いた商品のスクロール位置を先頭に戻す。
         itemDialog.scrollTop = 0;
